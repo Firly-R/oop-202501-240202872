@@ -5,7 +5,6 @@ public class HelloProcedural {
       String nama = "Muhammad Firly Ramadhan";
       System.out.println("Hello, I'm Back");
       System.out.println("NIM: " + nim + ", Nama: " + nama);
-      System.out.println("Daftar Produk:");
 
    }
 }
