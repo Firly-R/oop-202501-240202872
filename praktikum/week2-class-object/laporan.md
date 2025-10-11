@@ -80,7 +80,7 @@ public class Produk {
     }
 }
 ```
-##2. CreditBy.java
+2. CreditBy.java
 ```CreditBy.java
 package main.java.com.upb.agripos.util;
 
@@ -91,7 +91,7 @@ public class CreditBy {
     }
 }
 ```
-##3. MainProduk.java
+3. MainProduk.java
 ```MainProduk.java
 package main.java.com.upb.agripos;
 
@@ -124,7 +124,7 @@ public class MainProduk {
 
 ## Hasil Eksekusi
 
-[Screenshot hasil](screenshots/hasil.png)
+[Screenshot hasil](Screenshot 2025-10-11 134803.png)
 ---
 
 ## Analisis
