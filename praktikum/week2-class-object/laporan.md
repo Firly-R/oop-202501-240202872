@@ -38,6 +38,7 @@ Topik: ["Class dan Object"]
    ```
 
 ## Kode Program
+## 1. Produk.java
 ``` Produk.java
 package main.java.com.upb.agripos.model;
 
@@ -79,6 +80,7 @@ public class Produk {
     }
 }
 ```
+##2. CreditBy.java
 ```CreditBy.java
 package main.java.com.upb.agripos.util;
 
@@ -89,6 +91,7 @@ public class CreditBy {
     }
 }
 ```
+##3. MainProduk.java
 ```MainProduk.java
 package main.java.com.upb.agripos;
 
@@ -120,9 +123,8 @@ public class MainProduk {
 ```
 
 ## Hasil Eksekusi
-(Sertakan screenshot hasil eksekusi program.  
-![Screenshot hasil](screenshots/hasil.png)
-)
+
+[Screenshot hasil](screenshots/hasil.png)
 ---
 
 ## Analisis
