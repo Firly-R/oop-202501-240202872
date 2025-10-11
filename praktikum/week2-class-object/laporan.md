@@ -124,7 +124,7 @@ public class MainProduk {
 
 ## Hasil Eksekusi
 
-[Screenshot hasil](Week2.png)
+![Screenshot hasil](screenshots/Week2.png)
 ---
 
 ## Analisis
