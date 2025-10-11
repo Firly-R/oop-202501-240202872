@@ -1,5 +1,5 @@
-# Laporan Praktikum Minggu 1 (sesuaikan minggu ke berapa?)
-Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
+# Laporan Praktikum Minggu 1
+Topik: Setup hello pos
 
 ## Identitas
 - Nama  : [Muhammad Firly Ramadhan]
@@ -109,9 +109,14 @@ public class HelloFungsional {
 
 
 ## Hasil Eksekusi
-(Sertakan screenshot hasil eksekusi program.  
-![Screenshot hasil](screenshots/hasil.png)
-)
+**HelloFungsional**
+
+![Screenshot hasil](screenshots/HelloFungsional.png)
+
+**HelloOOP**
+![Screenshot hasil](screenshots/HelloOOP.png)
+**HelloProsedural**
+![Screenshot hasil](screenshots/HelloProsedural.png)
 ---
 
 ## Analisis
