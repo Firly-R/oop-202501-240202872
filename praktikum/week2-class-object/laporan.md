@@ -1,25 +1,27 @@
-# Laporan Praktikum Minggu 1 (sesuaikan minggu ke berapa?)
-Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
+# Laporan Praktikum Minggu 2
+Topik: ["Class dan Object"]
 
 ## Identitas
-- Nama  : [Nama Mahasiswa]
-- NIM   : [NIM Mahasiswa]
-- Kelas : [Kelas]
+- Nama  : [Muhammad Firly Ramadhan]
+- NIM   : [240202872]
+- Kelas : [3IKRB]
 
 ---
 
 ## Tujuan
-(Tuliskan tujuan praktikum minggu ini.  
-Contoh: *Mahasiswa memahami konsep class dan object serta dapat membuat class Produk dengan enkapsulasi.*)
+1. Memahami konsep *class* dan *object* dalam OOP.
+2. Mampu menerapkan *enkapsulasi* dengan *getter* dan *setter*.
+3. Dapat membuat class `Produk` untuk merepresentasikan produk pertanian.
+4. Mampu menampilkan identitas mahasiswa melalui class `CreditBy`.
 
 ---
 
 ## Dasar Teori
-(Tuliskan ringkasan teori singkat (3–5 poin) yang mendasari praktikum.  
-Contoh:  
-1. Class adalah blueprint dari objek.  
-2. Object adalah instansiasi dari class.  
-3. Enkapsulasi digunakan untuk menyembunyikan data.)
+1. **Class** adalah blueprint atau cetak biru dari objek.
+2. **Object** merupakan instansiasi dari class dan memiliki atribut serta method.
+3. **Enkapsulasi** melindungi data dengan menjadikan atribut `private` dan mengaksesnya melalui `getter` dan `setter`.
+4. **Access modifier** (`public`, `private`, `protected`) mengatur visibilitas data dan method dalam OOP.
+5. Dengan class, kode menjadi lebih modular, mudah dikembangkan, dan dapat digunakan ulang.
 
 ---
 
