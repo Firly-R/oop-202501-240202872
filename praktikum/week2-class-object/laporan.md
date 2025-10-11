@@ -124,29 +124,34 @@ public class MainProduk {
 
 ## Hasil Eksekusi
 
-[Screenshot hasil](Screenshot 2025-10-11 134803.png)
+[Screenshot hasil](Week2.png)
 ---
 
 ## Analisis
-(
-- Jelaskan bagaimana kode berjalan.  
-- Apa perbedaan pendekatan minggu ini dibanding minggu sebelumnya.  
-- Kendala yang dihadapi dan cara mengatasinya.  
-)
+1. Program menerapkan konsep OOP dengan baik: class `Produk` mewakili objek produk dengan atribut dan method.
+2. Enkapsulasi diterapkan melalui atribut `private` dan penggunaan *getter/setter*.
+3. Method `tambahStok()` dan `kurangiStok()` menunjukkan perilaku (behavior) objek.
+4. Pemanggilan `CreditBy.print()` menampilkan identitas mahasiswa secara otomatis.
+5. Dibanding minggu sebelumnya, pendekatan OOP membuat program lebih terstruktur dan mudah dikembangkan.
+6. Kendala yang dihadapi: Kendala yang dihadapi: sempat terjadi kesalahan saat mendefinisikan constructor (urutan parameter tidak sesuai) dan kesalahan dalam menampilkan semua produk karena lupa memanggil produk ketiga. Setelah diperbaiki, program berjalan sesuai harapan.
 ---
 
 ## Kesimpulan
-(Tuliskan kesimpulan dari praktikum minggu ini.  
-Contoh: *Dengan menggunakan class dan object, program menjadi lebih terstruktur dan mudah dikembangkan.*)
-
+Dengan menerapkan konsep *class* dan *object*, program menjadi lebih modular, mudah dipahami, dan dapat dikembangkan untuk sistem Agri-POS yang lebih besar.
+Konsep enkapsulasi membantu menjaga keamanan data dan konsistensi nilai atribut.
 ---
 
 ## Quiz
-(1. [Tuliskan kembali pertanyaan 1 dari panduan]  
-   **Jawaban:** …  
+(1. Mengapa atribut sebaiknya dideklarasikan sebagai private dalam class?
+   **Jawaban:Atribut sebaiknya dideklarasikan sebagai private agar data di dalam class tidak bisa diakses atau diubah langsung dari luar class.
+Hal ini melindungi integritas data dan mencegah perubahan yang tidak diinginkan. Dengan cara ini, programmer dapat mengontrol bagaimana data dibaca dan dimodifikasi melalui method getter dan setter.** …  
 
-2. [Tuliskan kembali pertanyaan 2 dari panduan]  
-   **Jawaban:** …  
+2. Apa fungsi getter dan setter dalam enkapsulasi? 
+   **Jawaban:Getter berfungsi untuk mengambil (membaca) nilai atribut yang bersifat private. Setter berfungsi untuk mengubah (menulis) nilai atribut tersebut dengan kontrol tertentu (misalnya memvalidasi input). Keduanya mendukung konsep enkapsulasi dengan memberikan akses terkontrol terhadap atribut internal suatu objek.** …  
 
-3. [Tuliskan kembali pertanyaan 3 dari panduan]  
-   **Jawaban:** …  )
+3. Bagaimana cara class Produk mendukung pengembangan aplikasi POS yang lebih kompleks?
+   **Jawaban:Class Produk dapat menjadi dasar model data untuk sistem POS (Point of Sale).
+Dengan adanya class ini, sistem dapat:
+a. Mengelola daftar produk secara terstruktur (nama, harga, stok).
+b. Digunakan kembali untuk fitur lanjutan seperti transaksi, laporan stok, dan manajemen inventori.
+c. Mudah dikembangkan karena desain berbasis OOP memungkinkan penambahan fitur tanpa mengubah struktur dasar class.** …  )
