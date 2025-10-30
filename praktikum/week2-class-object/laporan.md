@@ -124,7 +124,7 @@ public class MainProduk {
 
 ## Hasil Eksekusi
 
-![Screenshot hasil](screenshots/Screenshot 2025-10-11 134803.png)
+![Screenshot hasil](screenshots/ClassObject.png)
 ---
 
 ## Analisis
