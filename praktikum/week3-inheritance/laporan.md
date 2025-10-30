@@ -72,7 +72,7 @@ public class AlatPertanian extends Produk {
     }
 }
 
----
+```
 2. Benih.java
 ```Benih.java
 package com.upb.agripos.model;
@@ -93,7 +93,7 @@ public class Benih extends Produk {
         return super.deskripsi() + ", Varietas: " + this.varietas;
     }
 }
----
+```
 3. Produk.java
 ```Produk.java
 package com.upb.agripos.model;
@@ -128,7 +128,7 @@ public class Produk {
                ", Stok: " + this.stok;
     }
 }
----
+```
 4. Pupuk.java
 ```package com.upb.agripos.model;
 
@@ -148,7 +148,7 @@ public class Pupuk extends Produk {
         return super.deskripsi() + ", Jenis: " + this.jenis;
     }
 }
----
+```
 5. CreditBy.java
 ```package com.upb.agripos.Util;
 
@@ -161,7 +161,7 @@ public class CreditBy {
         System.out.println("=================\n");
     }
 }
----
+```
 6. MainInheritance.java
 ```package com.upb.agripos;
 
@@ -193,7 +193,7 @@ public class MainInheritance {
     }
     
 }
----
+```
 
 ## Hasil Eksekusi
 - ✅ Superclass `Produk` digunakan kembali tanpa duplikasi kode.  
@@ -203,7 +203,8 @@ public class MainInheritance {
 - ✅ Commit sesuai instruksi.  
 - ✅ Laporan singkat lengkap dengan analisis.  
 ---
-
+## Hasil
+![Screenshot hasil](screenshots/Inheritance.png)
 ## Analisis
 1. Kelas Produk menjadi superclass yang menyimpan atribut umum produk seperti kode, nama, harga, dan stok.
 2. Kelas Benih, Pupuk, dan AlatPertanian merupakan subclass yang menambahkan atribut khusus masing-masing dan meng-override method deskripsi().
