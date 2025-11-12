@@ -1,8 +1,6 @@
-
-
 package main.java.com.upb.agripos.model;
 
-public class ObatHama extends Produk {
+public class ObatHama extends produk {
     private String targetHama; 
 
     public ObatHama(String kode, String nama, double harga, int stok, String targetHama) {

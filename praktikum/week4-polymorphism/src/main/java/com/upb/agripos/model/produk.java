@@ -1,13 +1,13 @@
 package main.java.com.upb.agripos.model;
 
 
-public class Produk {
+public class produk {
     private String kode;
     private String nama;
     private double harga;
     private int stok;
 
-    public Produk(String kode, String nama, double harga, int stok) {
+    public produk(String kode, String nama, double harga, int stok) {
         this.kode = kode;
         this.nama = nama;
         this.harga = harga;

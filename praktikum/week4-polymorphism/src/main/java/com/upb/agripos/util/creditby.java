@@ -1,6 +1,6 @@
 package main.java.com.upb.agripos.util;
 
-public class CreditBy {
+public class creditby {
    
      public static void print(String nim, String nama) {
         System.out.println("\n=== Credit By ===");

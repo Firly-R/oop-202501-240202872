@@ -1,9 +1,9 @@
 package main.java.com.upb.agripos.model;
 
-public class AlatPertanian extends Produk {
+public class alatpertanian extends produk {
     private String bahan; 
 
-    public AlatPertanian(String kode, String nama, double harga, int stok, String bahan) {
+    public alatpertanian(String kode, String nama, double harga, int stok, String bahan) {
         super(kode, nama, harga, stok);
         this.bahan = bahan;
     }

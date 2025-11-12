@@ -209,6 +209,8 @@ public class MainInheritance {
 - ✅ Laporan singkat lengkap dengan analisis.  
 ---
 
+## Screenshot hasil
+![Screenshot hasil](screenshots/Inheritance.png)
 ## Analisis
 1. Kelas Produk menjadi superclass yang menyimpan atribut umum produk seperti kode, nama, harga, dan stok.
 2. Kelas Benih, Pupuk, dan AlatPertanian merupakan subclass yang menambahkan atribut khusus masing-masing dan meng-override method deskripsi().
