@@ -1,4 +1,4 @@
-# Laporan Praktikum Minggu 1 (sesuaikan minggu ke berapa?)
+# Laporan Praktikum Minggu 3
 Topik: [Inheritance]
 
 ## Identitas
@@ -223,13 +223,13 @@ Program AgriPOS berhasil menerapkan konsep dasar Object-Oriented Programming (OO
 
 ## Quiz
 1. Apa keuntungan menggunakan inheritance dibanding membuat class terpisah tanpa hubungan?  
-   **Jawaban:** Keuntungan menggunakan inheritance adalah kode menjadi lebih efisien karena subclass dapat mewarisi atribut dan method dari superclass tanpa harus menulis ulang, sehingga memudahkan perawatan dan pengembangan program.
+   **Jawaban: Keuntungan menggunakan inheritance adalah kode menjadi lebih efisien karena subclass dapat mewarisi atribut dan method dari superclass tanpa harus menulis ulang, sehingga memudahkan perawatan dan pengembangan program.** 
 
 2. Bagaimana cara subclass memanggil konstruktor superclass?  
-   **Jawaban:** ubclass memanggil konstruktor superclass dengan menggunakan keyword super() di dalam konstruktor subclass untuk menginisialisasi atribut yang dimiliki kelas induk.
+   **Jawaban: Subclass memanggil konstruktor superclass dengan menggunakan keyword super() di dalam konstruktor subclass untuk menginisialisasi atribut yang dimiliki kelas induk.** 
 
 3. Berikan contoh kasus di POS pertanian selain Benih, Pupuk, dan Alat Pertanian yang bisa dijadikan subclass.  
-   **Jawaban:** Contoh kasus lain di POS pertanian adalah ObatTanaman, yang bisa menjadi subclass dari Produk dengan atribut tambahan seperti kandungan atau dosis penggunaan.
+   **Jawaban: Contoh kasus lain di POS pertanian adalah ObatTanaman, yang bisa menjadi subclass dari Produk dengan atribut tambahan seperti kandungan atau dosis penggunaan.** 
 
 
 
