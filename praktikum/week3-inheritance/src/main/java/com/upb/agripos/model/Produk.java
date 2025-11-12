@@ -29,5 +29,10 @@ public class Produk {
                ", Harga: Rp" + String.format("%,.2f", this.harga) +
                ", Stok: " + this.stok;
     }
+
+    public char[] getInfo() {
+    
+        throw new UnsupportedOperationException("Unimplemented method 'getInfo'");
+    }
 }
 
