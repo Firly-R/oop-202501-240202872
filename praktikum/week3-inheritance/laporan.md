@@ -194,6 +194,11 @@ public class MainInheritance {
     
 }
 ```
+## Hasil Eksekusi
+
+![Screenshot hasil](screenshots/Inheritance.png)
+---
+
 
 ## Hasil Eksekusi
 - ✅ Superclass `Produk` digunakan kembali tanpa duplikasi kode.  
