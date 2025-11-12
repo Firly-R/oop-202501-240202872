@@ -248,7 +248,7 @@ public class MainAbstraction {
 ---
 
 ## Hasil Eksekusi 
-![Screenshot hasil](screenshots/AbstactionInterface.png)
+![Screenshot hasil](screenshots/AbstractionInterface.png)
 
 ---
 
