@@ -64,22 +64,20 @@ Use Case Diagram :
 ---
 
 ## Analisis
-(
 Berdasarkan kebutuhan sistem Agri-POS, sistem harus mampu mendukung proses transaksi penjualan, pengelolaan produk, dan pembayaran dengan beberapa metode. Analisis dilakukan untuk mengidentifikasi aktor, fungsi utama, serta alur proses yang terjadi dalam sistem. Hasil analisis digunakan sebagai dasar dalam pembuatan Use Case, Activity, Sequence, dan Class Diagram agar desain sistem konsisten dan sesuai dengan kebutuhan pengguna. 
-)
+
 ---
 
 ## Kesimpulan
-(Berdasarkan hasil perancangan UML pada sistem Agri-POS, dapat disimpulkan bahwa penggunaan Use Case, Activity, Sequence, dan Class Diagram membantu memahami kebutuhan, alur proses, serta struktur sistem secara jelas. Perancangan ini menghasilkan desain sistem yang terstruktur dan konsisten sehingga memudahkan pengembangan dan pemeliharaan sistem di tahap selanjutnya.)
+Berdasarkan hasil perancangan UML pada sistem Agri-POS, dapat disimpulkan bahwa penggunaan Use Case, Activity, Sequence, dan Class Diagram membantu memahami kebutuhan, alur proses, serta struktur sistem secara jelas. Perancangan ini menghasilkan desain sistem yang terstruktur dan konsisten sehingga memudahkan pengembangan dan pemeliharaan sistem di tahap selanjutnya.
 
 ---
 
 ## Quiz
-(
 1. Aggregation adalah hubungan lemah di mana objek dapat berdiri sendiri, sedangkan Composition adalah hubungan kuat di mana objek bergantung pada induknya.Contohnya AgriPOSSystem–PaymentService (aggregation) dan Transaction–detail transaksi (composition).
 
 2. Open/Closed Principle membuat sistem mudah dikembangkan karena fitur baru dapat ditambahkan tanpa mengubah kode lama, misalnya menambah metode pembayaran baru melalui interface PaymentMethod.
 
 3. Dependency Inversion Principle (DIP) meningkatkan testability karena kelas bergantung pada interface, sehingga mudah diganti dengan mock saat pengujian, contohnya PaymentService yang bergantung pada PaymentMethod.
-)
+
 
