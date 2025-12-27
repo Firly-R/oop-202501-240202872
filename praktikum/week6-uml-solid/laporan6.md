@@ -46,11 +46,21 @@ Class Diagram menampilkan struktur kelas dan hubungan antar kelas dalam sistem A
 ---
 
 ## Hasil Eksekusi
+Activity :
 
 ![Activity](screenshots/Activity.png)
+
+Class Diagram :
+
 ![Class](screenshots/Class.png)
+
+Sequence :
+
 ![Sequence](screenshots/Sequence.png)
-![Use Case](screenshots/Use Case.png)
+
+Use Case Diagram :
+
+![Usecase](screenshots/Usecase.png)
 ---
 
 ## Analisis
