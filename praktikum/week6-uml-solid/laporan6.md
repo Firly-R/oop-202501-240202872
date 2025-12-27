@@ -79,5 +79,5 @@ Berdasarkan hasil perancangan UML pada sistem Agri-POS, dapat disimpulkan bahwa 
 2. Open/Closed Principle membuat sistem mudah dikembangkan karena fitur baru dapat ditambahkan tanpa mengubah kode lama, misalnya menambah metode pembayaran baru melalui interface PaymentMethod.
 
 3. Dependency Inversion Principle (DIP) meningkatkan testability karena kelas bergantung pada interface, sehingga mudah diganti dengan mock saat pengujian, contohnya PaymentService yang bergantung pada PaymentMethod.
-
+---
 
