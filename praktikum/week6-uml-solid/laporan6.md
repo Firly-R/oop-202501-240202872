@@ -1,73 +1,74 @@
-# Laporan Praktikum Minggu 1 (sesuaikan minggu ke berapa?)
-Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
+# Laporan Praktikum Minggu 6 
+Topik: [Desain Arsitektur Sistem dengan UML dan Prinsip SOLID]
 
 ## Identitas
-- Nama  : [Nama Mahasiswa]
-- NIM   : [NIM Mahasiswa]
-- Kelas : [Kelas]
+- Nama  : [Muhammad Firly Ramadhan]
+- NIM   : [240202872]
+- Kelas : [3IKRB]
 
 ---
 
 ## Tujuan
-(Tuliskan tujuan praktikum minggu ini.  
-Contoh: *Mahasiswa memahami konsep class dan object serta dapat membuat class Produk dengan enkapsulasi.*)
+Mahasiswa mampu :
+1. Mahasiswa mampu mengidentifikasi kebutuhan sistem ke dalam diagram UML.
+2. Mahasiswa mampu menggambar UML Class Diagram dengan relasi antar class yang tepat.
+3. Mahasiswa mampu menjelaskan prinsip desain OOP (SOLID).
+4. Mahasiswa mampu menerapkan minimal dua prinsip SOLID dalam kode program.
 
 ---
 
 ## Dasar Teori
-(Tuliskan ringkasan teori singkat (3–5 poin) yang mendasari praktikum.  
-Contoh:  
-1. Class adalah blueprint dari objek.  
-2. Object adalah instansiasi dari class.  
-3. Enkapsulasi digunakan untuk menyembunyikan data.)
+1. Use Case Diagram
+Use Case Diagram menggambarkan fungsi utama sistem Agri-POS dan interaksi antara aktor Kasir dan Admin dengan sistem.
+
+2. Activity Diagram
+Activity Diagram menunjukkan alur proses checkout mulai dari pemilihan produk, pembayaran, hingga pencetakan struk.
+
+3. Sequence Diagram
+Sequence Diagram menjelaskan urutan interaksi antar objek dalam proses pembayaran sesuai metode yang dipilih.
+
+4. Class Diagram
+Class Diagram menampilkan struktur kelas dan hubungan antar kelas dalam sistem Agri-POS.
 
 ---
 
 ## Langkah Praktikum
-(Tuliskan Langkah-langkah dalam prakrikum, contoh:
-1. Langkah-langkah yang dilakukan (setup, coding, run).  
-2. File/kode yang dibuat.  
-3. Commit message yang digunakan.)
+1. Menganalisis kebutuhan sistem Agri-POS berdasarkan deskripsi fungsional.
+2. Mengidentifikasi aktor dan fungsi utama sistem.
+3. Membuat Use Case Diagram menggunakan PlantUML di draw.io.
+4. Menyusun Activity Diagram untuk proses checkout.
+5. Membuat Sequence Diagram untuk alur pembayaran.
+6. Merancang Class Diagram sesuai struktur sistem.
+7. Menyimpan hasil diagram dalam format PNG/PDF.
+8. Memeriksa konsistensi antara Use Case, Activity, Sequence, dan Class Diagram.
+9. Menyusun laporan praktikum dan menarik kesimpulan.
 
----
-
-## Kode Program
-(Tuliskan kode utama yang dibuat, contoh:  
-
-```java
-// Contoh
-Produk p1 = new Produk("BNH-001", "Benih Padi", 25000, 100);
-System.out.println(p1.getNama());
-```
-)
 ---
 
 ## Hasil Eksekusi
-(Sertakan screenshot hasil eksekusi program.  
-![Screenshot hasil](screenshots/hasil.png)
-)
+
+![Activity](screenshots/Activity.png)
+![Class](screenshots/Class.png)
+![Sequence](screenshots/Sequence.png)
+![Use Case](screenshots/Use Case.png)
 ---
 
 ## Analisis
 (
-- Jelaskan bagaimana kode berjalan.  
-- Apa perbedaan pendekatan minggu ini dibanding minggu sebelumnya.  
-- Kendala yang dihadapi dan cara mengatasinya.  
+Berdasarkan kebutuhan sistem Agri-POS, sistem harus mampu mendukung proses transaksi penjualan, pengelolaan produk, dan pembayaran dengan beberapa metode. Analisis dilakukan untuk mengidentifikasi aktor, fungsi utama, serta alur proses yang terjadi dalam sistem. Hasil analisis digunakan sebagai dasar dalam pembuatan Use Case, Activity, Sequence, dan Class Diagram agar desain sistem konsisten dan sesuai dengan kebutuhan pengguna. 
 )
 ---
 
 ## Kesimpulan
-(Tuliskan kesimpulan dari praktikum minggu ini.  
-Contoh: *Dengan menggunakan class dan object, program menjadi lebih terstruktur dan mudah dikembangkan.*)
+(Berdasarkan hasil perancangan UML pada sistem Agri-POS, dapat disimpulkan bahwa penggunaan Use Case, Activity, Sequence, dan Class Diagram membantu memahami kebutuhan, alur proses, serta struktur sistem secara jelas. Perancangan ini menghasilkan desain sistem yang terstruktur dan konsisten sehingga memudahkan pengembangan dan pemeliharaan sistem di tahap selanjutnya.)
 
 ---
 
 ## Quiz
-(1. [Tuliskan kembali pertanyaan 1 dari panduan]  
-   **Jawaban:** …  
+(
+1. Aggregation adalah hubungan lemah di mana objek dapat berdiri sendiri, sedangkan Composition adalah hubungan kuat di mana objek bergantung pada induknya.Contohnya AgriPOSSystem–PaymentService (aggregation) dan Transaction–detail transaksi (composition).
 
-2. [Tuliskan kembali pertanyaan 2 dari panduan]  
-   **Jawaban:** …  
+2. Open/Closed Principle membuat sistem mudah dikembangkan karena fitur baru dapat ditambahkan tanpa mengubah kode lama, misalnya menambah metode pembayaran baru melalui interface PaymentMethod.
 
-3. [Tuliskan kembali pertanyaan 3 dari panduan]  
-   **Jawaban:** …  )
+3. Dependency Inversion Principle (DIP) meningkatkan testability karena kelas bergantung pada interface, sehingga mudah diganti dengan mock saat pengujian, contohnya PaymentService yang bergantung pada PaymentMethod.
+)
