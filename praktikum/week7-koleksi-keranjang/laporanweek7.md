@@ -1,5 +1,5 @@
-# Laporan Praktikum Minggu 1 (sesuaikan minggu ke berapa?)
-Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
+# Laporan Praktikum Minggu 7 
+Topik: [Collections dan Implementasi Keranjang Belanja]
 
 ## Identitas
 - Nama  : [Muhammad Firly Ramadhan]
@@ -20,7 +20,6 @@ Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
 ## Dasar Teori
 1. Collections Framework
 Java Collections Framework menyediakan struktur data untuk mengelola objek secara dinamis dan efisien.
-
 Struktur utama:
 -List (implementasi: ArrayList) — Terurut, dapat menyimpan elemen duplikat.
 -Map (implementasi: HashMap) — Menyimpan pasangan key–value, akses cepat berdasarkan key.
