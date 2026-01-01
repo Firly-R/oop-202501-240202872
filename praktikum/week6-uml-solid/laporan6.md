@@ -1,10 +1,19 @@
 # Laporan Praktikum Minggu 6 
+<<<<<<< HEAD
 Topik: [Desain Arsitektur Sistem dengan UML dan Prinsip SOLID]
 
 ## Identitas
 - Nama  : [Muhammad Firly Ramadhan]
 - NIM   : [240202872]
 - Kelas : [3IKRB]
+=======
+Topik: Desain Arsitektur Sistem dengan UML dan Prinsip SOLID
+
+## Identitas
+- Nama  : Muhammad Firly Ramadhan
+- NIM   : 240202872
+- Kelas : 3IKRB
+>>>>>>> 57e3ecdc4c502288ea209819dc216b7fa1f7a786
 
 ---
 
@@ -46,6 +55,7 @@ Class Diagram menampilkan struktur kelas dan hubungan antar kelas dalam sistem A
 ---
 
 ## Hasil Eksekusi
+<<<<<<< HEAD
 
 ![Activity](screenshots/Activity.png)
 ![Class](screenshots/Class.png)
@@ -61,10 +71,37 @@ Berdasarkan kebutuhan sistem Agri-POS, sistem harus mampu mendukung proses trans
 
 ## Kesimpulan
 (Berdasarkan hasil perancangan UML pada sistem Agri-POS, dapat disimpulkan bahwa penggunaan Use Case, Activity, Sequence, dan Class Diagram membantu memahami kebutuhan, alur proses, serta struktur sistem secara jelas. Perancangan ini menghasilkan desain sistem yang terstruktur dan konsisten sehingga memudahkan pengembangan dan pemeliharaan sistem di tahap selanjutnya.)
+=======
+Activity :
+
+![Activity](screenshots/Activity.png)
+
+Class Diagram :
+
+![Class](screenshots/Class.png)
+
+Sequence :
+
+![Sequence](screenshots/Sequence.png)
+
+Use Case Diagram :
+
+![Usecase](screenshots/Usecase.png)
+---
+
+## Analisis
+Berdasarkan kebutuhan sistem Agri-POS, sistem harus mampu mendukung proses transaksi penjualan, pengelolaan produk, dan pembayaran dengan beberapa metode. Analisis dilakukan untuk mengidentifikasi aktor, fungsi utama, serta alur proses yang terjadi dalam sistem. Hasil analisis digunakan sebagai dasar dalam pembuatan Use Case, Activity, Sequence, dan Class Diagram agar desain sistem konsisten dan sesuai dengan kebutuhan pengguna. 
+
+---
+
+## Kesimpulan
+Berdasarkan hasil perancangan UML pada sistem Agri-POS, dapat disimpulkan bahwa penggunaan Use Case, Activity, Sequence, dan Class Diagram membantu memahami kebutuhan, alur proses, serta struktur sistem secara jelas. Perancangan ini menghasilkan desain sistem yang terstruktur dan konsisten sehingga memudahkan pengembangan dan pemeliharaan sistem di tahap selanjutnya.
+>>>>>>> 57e3ecdc4c502288ea209819dc216b7fa1f7a786
 
 ---
 
 ## Quiz
+<<<<<<< HEAD
 (
 1. Aggregation adalah hubungan lemah di mana objek dapat berdiri sendiri, sedangkan Composition adalah hubungan kuat di mana objek bergantung pada induknya.Contohnya AgriPOSSystem–PaymentService (aggregation) dan Transaction–detail transaksi (composition).
 
@@ -72,3 +109,12 @@ Berdasarkan kebutuhan sistem Agri-POS, sistem harus mampu mendukung proses trans
 
 3. Dependency Inversion Principle (DIP) meningkatkan testability karena kelas bergantung pada interface, sehingga mudah diganti dengan mock saat pengujian, contohnya PaymentService yang bergantung pada PaymentMethod.
 )
+=======
+1. Aggregation adalah hubungan lemah di mana objek dapat berdiri sendiri, sedangkan Composition adalah hubungan kuat di mana objek bergantung pada induknya.Contohnya AgriPOSSystem–PaymentService (aggregation) dan Transaction–detail transaksi (composition).
+
+2. Open/Closed Principle membuat sistem mudah dikembangkan karena fitur baru dapat ditambahkan tanpa mengubah kode lama, misalnya menambah metode pembayaran baru melalui interface PaymentMethod.
+
+3. Dependency Inversion Principle (DIP) meningkatkan testability karena kelas bergantung pada interface, sehingga mudah diganti dengan mock saat pengujian, contohnya PaymentService yang bergantung pada PaymentMethod.
+---
+
+>>>>>>> 57e3ecdc4c502288ea209819dc216b7fa1f7a786

@@ -276,3 +276,4 @@ Melalui praktikum ini, dipahami bahwa abstraksi membantu menyederhanakan desain 
 
 3. [Pada contoh Agri-POS, bagian mana yang paling tepat menjadi abstract class dan mana yang menjadi interface? Jelaskan alasannya.]  
    **Jawaban: Pada contoh Agri-POS, kelas Pembayaran paling tepat dijadikan abstract class karena memiliki atribut dan perilaku dasar yang sama untuk semua jenis pembayaran seperti invoiceNo, total, dan metode totalBayar(). Sementara itu, Validatable dan Receiptable lebih tepat dijadikan interface karena keduanya hanya berisi kontrak perilaku, yaitu kemampuan validasi dan pencetakan struk, yang dapat diterapkan oleh berbagai jenis pembayaran tanpa terikat pada satu hierarki kelas tertentu.** 
+
