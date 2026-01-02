@@ -55,7 +55,6 @@ Class Diagram menampilkan struktur kelas dan hubungan antar kelas dalam sistem A
 ---
 
 ## Hasil Eksekusi
-<<<<<<< HEAD
 
 ![Activity](screenshots/Activity.png)
 ![Class](screenshots/Class.png)
@@ -71,7 +70,7 @@ Berdasarkan kebutuhan sistem Agri-POS, sistem harus mampu mendukung proses trans
 
 ## Kesimpulan
 (Berdasarkan hasil perancangan UML pada sistem Agri-POS, dapat disimpulkan bahwa penggunaan Use Case, Activity, Sequence, dan Class Diagram membantu memahami kebutuhan, alur proses, serta struktur sistem secara jelas. Perancangan ini menghasilkan desain sistem yang terstruktur dan konsisten sehingga memudahkan pengembangan dan pemeliharaan sistem di tahap selanjutnya.)
-=======
+
 Activity :
 
 ![Activity](screenshots/Activity.png)
@@ -96,12 +95,11 @@ Berdasarkan kebutuhan sistem Agri-POS, sistem harus mampu mendukung proses trans
 
 ## Kesimpulan
 Berdasarkan hasil perancangan UML pada sistem Agri-POS, dapat disimpulkan bahwa penggunaan Use Case, Activity, Sequence, dan Class Diagram membantu memahami kebutuhan, alur proses, serta struktur sistem secara jelas. Perancangan ini menghasilkan desain sistem yang terstruktur dan konsisten sehingga memudahkan pengembangan dan pemeliharaan sistem di tahap selanjutnya.
->>>>>>> 57e3ecdc4c502288ea209819dc216b7fa1f7a786
+
 
 ---
 
 ## Quiz
-<<<<<<< HEAD
 (
 1. Aggregation adalah hubungan lemah di mana objek dapat berdiri sendiri, sedangkan Composition adalah hubungan kuat di mana objek bergantung pada induknya.Contohnya AgriPOSSystem–PaymentService (aggregation) dan Transaction–detail transaksi (composition).
 
@@ -117,4 +115,3 @@ Berdasarkan hasil perancangan UML pada sistem Agri-POS, dapat disimpulkan bahwa 
 3. Dependency Inversion Principle (DIP) meningkatkan testability karena kelas bergantung pada interface, sehingga mudah diganti dengan mock saat pengujian, contohnya PaymentService yang bergantung pada PaymentMethod.
 ---
 
->>>>>>> 57e3ecdc4c502288ea209819dc216b7fa1f7a786

@@ -1,5 +1,5 @@
-# Laporan Praktikum Minggu 1 (sesuaikan minggu ke berapa?)
-Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
+# Laporan Praktikum Minggu 7
+Topik: 
 
 ## Identitas
 - Nama  : [Muhammad Firly Ramadhan]
@@ -192,30 +192,45 @@ public class ShoppingCartMap {
 ---
 
 ## Hasil Eksekusi
-![Screenshot hasil](screenshots/hasil.png)
+
+### ArrayList
+![Screenshot hasil](screenshots/ArrayList.png)
+
+### Map
+![Screenshot hasil](screenshots/Map.png)
 
 ---
 
 ## Analisis
 (
-- Jelaskan bagaimana kode berjalan.  
-- Apa perbedaan pendekatan minggu ini dibanding minggu sebelumnya.  
-- Kendala yang dihadapi dan cara mengatasinya.  
+1. Penjelasan Cara Kerja Program
+
+Program keranjang belanja bekerja dengan menggunakan Java Collections Framework untuk menyimpan dan mengelola data produk. Data produk direpresentasikan dalam class Product, kemudian dikelola melalui class keranjang belanja menggunakan ArrayList atau Map. Produk ditambahkan ke dalam keranjang, ditampilkan ke console, dihitung total harganya, dan dapat dihapus sehingga isi keranjang serta total belanja akan diperbarui secara otomatis.
+
+2. Perbandingan Pendekatan Minggu Ini dengan Minggu Sebelumnya
+
+Pendekatan pada praktikum minggu ini lebih maju dibandingkan minggu sebelumnya karena memanfaatkan struktur data collection seperti ArrayList dan Map, sehingga pengelolaan data menjadi dinamis. Pada minggu sebelumnya, pengolahan data masih bersifat sederhana dan statis, sedangkan pada minggu ini data dapat ditambah dan dihapus dengan lebih fleksibel serta lebih mendekati implementasi aplikasi nyata seperti sistem keranjang belanja.
+
+3. Kendala yang Dihadapi dan Cara Mengatasinya
+
+Kendala utama yang dihadapi adalah tampilan nilai harga dan total belanja yang masih menampilkan angka desimal .0 karena menggunakan tipe data double. Kendala tersebut diatasi dengan melakukan format tampilan angka menggunakan DecimalFormat agar nilai harga dan total belanja ditampilkan dalam bentuk bilangan bulat sehingga output menjadi lebih rapi dan mudah dibaca.
 )
+
 ---
 
 ## Kesimpulan
-(Tuliskan kesimpulan dari praktikum minggu ini.  
-Contoh: *Dengan menggunakan class dan object, program menjadi lebih terstruktur dan mudah dikembangkan.*)
+(Berdasarkan hasil praktikum yang telah dilakukan, dapat disimpulkan bahwa penggunaan Java Collections Framework, khususnya ArrayList dan Map, mempermudah pengelolaan data produk dalam sistem keranjang belanja. ArrayList cocok digunakan untuk keranjang belanja sederhana tanpa pengelolaan jumlah produk, sedangkan Map lebih efektif untuk mengelola produk beserta quantity-nya. Implementasi fitur tambah produk, hapus produk, dan hitung total belanja dapat berjalan dengan baik dan menghasilkan output yang sesuai dengan tujuan praktikum. Dengan demikian, pemanfaatan collection dalam Java dapat meningkatkan efisiensi dan fleksibilitas dalam pengembangan aplikasi berbasis objek.)
 
 ---
 
 ## Quiz
-(1. [Tuliskan kembali pertanyaan 1 dari panduan]  
-   **Jawaban:** …  
+(1. [Jelaskan perbedaan mendasar antara List, Map, dan Set.]  
+   **Jawaban:List menyimpan data berurutan dan boleh duplikat, Map menyimpan data dalam pasangan key–value, sedangkan Set menyimpan data unik tanpa duplikasi.** …  
 
-2. [Tuliskan kembali pertanyaan 2 dari panduan]  
-   **Jawaban:** …  
+2. [Mengapa ArrayList cocok digunakan untuk keranjang belanja sederhana?]  
+   **Jawaban:ArrayList cocok untuk keranjang belanja sederhana karena mudah digunakan dan mendukung penambahan serta penghapusan data secara dinamis.** …  
 
-3. [Tuliskan kembali pertanyaan 3 dari panduan]  
-   **Jawaban:** …  )
+3. [Bagaimana struktur Set mencegah duplikasi data?]  
+   **Jawaban:Set mencegah duplikasi dengan hanya menyimpan satu data yang sama dan menolak data duplikat.** …  
+4. [Kapan sebaiknya menggunakan Map dibandingkan List? Jelaskan dengan contoh.]  
+   **Jawaban:Map digunakan ketika data membutuhkan key dan quantity, misalnya produk sebagai key dan jumlah sebagai value dalam keranjang belanja.** … )
