@@ -340,32 +340,21 @@ public class AppJavaFX extends Application {
 ```
 ---
 
-## Hasil Eksekusi
-(Sertakan screenshot hasil eksekusi program.  
-![Screenshot hasil](screenshots/hasil.png)
-)
+## Hasil Eksekusi  
+![Screenshot hasil](screenshots/Hasilweek12.png)
+
 ---
 
 ## Analisis
-(
-- Jelaskan bagaimana kode berjalan.  
-- Apa perbedaan pendekatan minggu ini dibanding minggu sebelumnya.  
-- Kendala yang dihadapi dan cara mengatasinya.  
-)
+- Integrasi Arsitektur: Aplikasi berhasil menerapkan pemisahan tanggung jawab (separation of concerns) di mana GUI (View) hanya menangani tampilan, sementara logika data dikelola oleh ProductService dan ProductDAO.
+- Konektivitas Database: Penggunaan driver JDBC PostgreSQL memungkinkan aplikasi melakukan sinkronisasi data secara real-time antara antarmuka JavaFX dan tabel database agripos.
+- Mekanisme Event-Handling: Implementasi tombol "Tambah Produk" membuktikan bahwa skema Event-Driven dapat memicu rangkaian proses dari penangkapan input teks hingga eksekusi perintah SQL INSERT.
+- Validasi Traceability: Fungsi penambahan dan penampilan daftar produk (seperti pupuk dan benih) telah terverifikasi konsisten dengan artefak desain Sequence Diagram dan Activity Diagram dari Bab 6.
+- Efektivitas UI: Penggunaan komponen ListView memberikan umpan balik visual yang instan kepada pengguna setelah data berhasil disimpan, sehingga meningkatkan aspek usability aplikasi.
+- Manajemen Dependency: Penggunaan vmArgs di launch.json sangat krusial untuk memuat modul JavaFX (javafx.controls) secara dinamis saat runtime agar aplikasi tidak mengalami FindException.
 ---
 
 ## Kesimpulan
-(Tuliskan kesimpulan dari praktikum minggu ini.  
-Contoh: *Dengan menggunakan class dan object, program menjadi lebih terstruktur dan mudah dikembangkan.*)
+Praktikum ini berhasil membangun aplikasi GUI berbasis JavaFX yang terintegrasi penuh dengan database PostgreSQL melalui pola arsitektur MVC. Penggunaan komponen dinamis seperti ListView mempermudah pengguna dalam memantau daftar produk secara langsung dari database. Keberhasilan aplikasi dalam menjalankan skenario tambah produk membuktikan bahwa implementasi kode telah memenuhi aspek traceability terhadap rancangan desain sistem yang telah dibuat sebelumnya.
 
 ---
-
-## Quiz
-(1. [Tuliskan kembali pertanyaan 1 dari panduan]  
-   **Jawaban:** …  
-
-2. [Tuliskan kembali pertanyaan 2 dari panduan]  
-   **Jawaban:** …  
-
-3. [Tuliskan kembali pertanyaan 3 dari panduan]  
-   **Jawaban:** …  )
