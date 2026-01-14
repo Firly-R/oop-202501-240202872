@@ -1,33 +1,43 @@
-# Laporan Praktikum Minggu 1 (sesuaikan minggu ke berapa?)
-Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
+# Laporan Praktikum week11
+Topik: Data Access Object (DAO) dan CRUD Database dengan JDBC
 
 ## Identitas
-- Nama  : [Nama Mahasiswa]
-- NIM   : [NIM Mahasiswa]
-- Kelas : [Kelas]
+- Nama  : [Muhammad Firly Ramadhan]
+- NIM   : [240202872]
+- Kelas : [3IKRB]
 
 ---
 
 ## Tujuan
-(Tuliskan tujuan praktikum minggu ini.  
-Contoh: *Mahasiswa memahami konsep class dan object serta dapat membuat class Produk dengan enkapsulasi.*)
+1. Menjelaskan konsep Data Access Object (DAO) dalam pengembangan aplikasi OOP.
+2. Menghubungkan aplikasi Java dengan basis data menggunakan JDBC.
+3. Mengimplementasikan operasi CRUD (Create, Read, Update, Delete) secara lengkap.
+4. Mengintegrasikan DAO dengan class aplikasi OOP sesuai prinsip desain yang baik.
+
 
 ---
 
 ## Dasar Teori
-(Tuliskan ringkasan teori singkat (3–5 poin) yang mendasari praktikum.  
-Contoh:  
-1. Class adalah blueprint dari objek.  
-2. Object adalah instansiasi dari class.  
-3. Enkapsulasi digunakan untuk menyembunyikan data.)
+### 1. Konsep Data Access Object (DAO)
+
+DAO adalah pola desain yang memisahkan logika akses data dari logika bisnis aplikasi. Dengan DAO, perubahan teknologi basis data tidak memengaruhi logika utama aplikasi.
+
+Manfaat DAO:
+- Kode lebih terstruktur dan mudah dipelihara
+- Mengurangi tight coupling antara aplikasi dan database
+- Mendukung pengujian dan pengembangan lanjutan
 
 ---
 
-## Langkah Praktikum
-(Tuliskan Langkah-langkah dalam prakrikum, contoh:
-1. Langkah-langkah yang dilakukan (setup, coding, run).  
-2. File/kode yang dibuat.  
-3. Commit message yang digunakan.)
+### 2. JDBC dan Koneksi Database
+
+JDBC (Java Database Connectivity) digunakan untuk menghubungkan aplikasi Java dengan basis data relasional, dalam praktikum ini menggunakan PostgreSQL.
+
+Komponen utama JDBC:
+- DriverManager
+- Connection
+- PreparedStatement
+- ResultSet
 
 ---
 
@@ -49,16 +59,15 @@ System.out.println(p1.getNama());
 ---
 
 ## Analisis
-(
-- Jelaskan bagaimana kode berjalan.  
-- Apa perbedaan pendekatan minggu ini dibanding minggu sebelumnya.  
-- Kendala yang dihadapi dan cara mengatasinya.  
-)
+1. Pemisahan Logika (DAO): Menggunakan pola Data Access Object untuk memisahkan logika bisnis aplikasi dari detail teknis akses database.
+2. Struktur Model-Interface: Membagi kode ke dalam class Product (data), interface ProductDAO (kontrak), dan ProductDAOImpl (eksekusi SQL) agar lebih rapi.
+3. Keamanan Query: Menggunakan PreparedStatement untuk mencegah SQL Injection saat melakukan operasi CRUD.
+4. Konektivitas JDBC: Menghubungkan Java ke PostgreSQL menggunakan DriverManager dengan parameter URL, username, dan password yang spesifik.
+5. Manajemen Resource: Menerapkan penutupan koneksi otomatis agar tidak terjadi kebocoran memori pada database.
 ---
 
 ## Kesimpulan
-(Tuliskan kesimpulan dari praktikum minggu ini.  
-Contoh: *Dengan menggunakan class dan object, program menjadi lebih terstruktur dan mudah dikembangkan.*)
+*Penerapan pola desain DAO dalam praktikum ini berhasil memisahkan logika bisnis dengan akses data, sehingga kode program menjadi lebih terstruktur dan mudah dipelihara. Selain itu, penggunaan JDBC dengan PreparedStatement memastikan interaksi database agripos berjalan aman dari risiko SQL Injection selama operasi CRUD berlangsung.*
 
 ---
 
