@@ -11,11 +11,23 @@ public class ProductService {
         this.dao = dao;
     }
 
-    public void insert(Product p) throws Exception {
-        dao.insert(p);
+    public void addProduct(Product product) {
+        dao.save(product);
     }
 
-    public List<Product> findAll() throws Exception {
+    public Product getProduct(int id) {
+        return dao.findById(id);
+    }
+
+    public List<Product> getAllProducts() {
         return dao.findAll();
+    }
+
+    public void updateProduct(Product product) {
+        dao.update(product);
+    }
+
+    public void deleteProduct(int id) {
+        dao.delete(id);
     }
 }

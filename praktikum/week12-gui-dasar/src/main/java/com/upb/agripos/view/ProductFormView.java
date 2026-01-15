@@ -3,66 +3,147 @@ package com.upb.agripos.view;
 import com.upb.agripos.controller.ProductController;
 import com.upb.agripos.model.Product;
 import javafx.geometry.Insets;
-import javafx.scene.Parent;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.Separator;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 public class ProductFormView {
-    private VBox root;
-    private TextField txtCode, txtName, txtPrice, txtStock;
-    private Button btnAdd;
-    private ListView<String> listView; // Ini komponen daftar produknya
     private ProductController controller;
+    private TextField nameField;
+    private TextField priceField;
+    private TextField stockField;
+    private TextField codeField;
+    private ListView<Product> productList;
+    private VBox root;
 
     public ProductFormView(ProductController controller) {
         this.controller = controller;
-        initUI();
+        this.root = createUI();
     }
 
-    private void initUI() {
-        root = new VBox(10); // Susun secara vertikal dengan jarak 10px
-        root.setPadding(new Insets(20));
+    private VBox createUI() {
+        VBox mainBox = new VBox();
+        mainBox.setPadding(new Insets(15));
+        mainBox.setSpacing(10);
 
-        txtCode = new TextField(); txtCode.setPromptText("Kode Produk");
-        txtName = new TextField(); txtName.setPromptText("Nama Produk");
-        txtPrice = new TextField(); txtPrice.setPromptText("Harga");
-        txtStock = new TextField(); txtStock.setPromptText("Stok");
-        btnAdd = new Button("Tambah Produk");
-        listView = new ListView<>(); // Inisialisasi kotak daftar
+        Label title = new Label("Agri-POS - Kelola Produk");
+        title.setStyle("-fx-font-size: 18; -fx-font-weight: bold;");
 
-        // Tambahkan semua komponen ke dalam layar
-        root.getChildren().addAll(
-            new Label("Form Input Produk Agri-POS"),
-            new Label("Kode Produk:"), txtCode,
-            new Label("Nama Produk:"), txtName,
-            new Label("Harga:"), txtPrice,
-            new Label("Stok:"), txtStock,
-            btnAdd,
-            new Label("Daftar Produk:"), listView
+        VBox formBox = createFormBox();
+        HBox buttonBox = createButtonBox();
+
+        productList = new ListView<>();
+        productList.setPrefHeight(250);
+
+        mainBox.getChildren().addAll(
+            title,
+            new Separator(),
+            formBox,
+            buttonBox,
+            new Label("Daftar Produk:"),
+            productList
         );
 
-        // Ambil data dari database saat aplikasi baru dibuka
-        refreshTable();
-
-        // Aksi ketika tombol diklik
-        btnAdd.setOnAction(event -> {
-            controller.addProduct(txtCode.getText(), txtName.getText(), txtPrice.getText(), txtStock.getText());
-            refreshTable(); // Update daftar setelah simpan ke DB
-            clearFields();
-        });
+        return mainBox;
     }
 
-    // Fungsi untuk mengambil data terbaru dari database
-    private void refreshTable() {
-        listView.getItems().clear();
-        for (Product p : controller.getAllProducts()) {
-            listView.getItems().add(p.getCode() + " - " + p.getName() + " (Stok: " + p.getStock() + ")");
+    private VBox createFormBox() {
+        VBox formBox = new VBox();
+        formBox.setSpacing(10);
+        formBox.setStyle("-fx-border-color: #cccccc; -fx-padding: 10;");
+
+        nameField = new TextField();
+        priceField = new TextField();
+        stockField = new TextField();
+        codeField = new TextField();
+
+        formBox.getChildren().addAll(
+            new Label("Nama Produk:"), nameField,
+            new Label("Harga:"), priceField,
+            new Label("Stok:"), stockField,
+            new Label("Kode Produk:"), codeField
+        );
+
+        return formBox;
+    }
+
+    private HBox createButtonBox() {
+        HBox buttonBox = new HBox();
+        buttonBox.setSpacing(10);
+
+        Button addButton = new Button("Tambah");
+        addButton.setOnAction(e -> handleAddProduct());
+
+        Button updateButton = new Button("Update");
+        updateButton.setOnAction(e -> handleUpdateProduct());
+
+        Button deleteButton = new Button("Hapus");
+        deleteButton.setOnAction(e -> handleDeleteProduct());
+
+        Button clearButton = new Button("Bersihkan");
+        clearButton.setOnAction(e -> clearForm());
+
+        buttonBox.getChildren().addAll(addButton, updateButton, deleteButton, clearButton);
+
+        return buttonBox;
+    }
+
+    private void handleAddProduct() {
+        try {
+            String name = nameField.getText();
+            double price = Double.parseDouble(priceField.getText());
+            int stock = Integer.parseInt(stockField.getText());
+            String code = codeField.getText();
+
+            if (name.isEmpty()) {
+                showAlert("Error", "Nama produk tidak boleh kosong!");
+                return;
+            }
+
+            Product product = new Product(name, code, price, stock);
+            controller.addProduct(product);
+            showAlert("Success", "Produk berhasil ditambahkan!");
+            clearForm();
+            loadProducts();
+        } catch (NumberFormatException e) {
+            showAlert("Error", "Harga dan stok harus berupa angka!");
         }
     }
 
-    private void clearFields() {
-        txtCode.clear(); txtName.clear(); txtPrice.clear(); txtStock.clear();
+    private void handleUpdateProduct() {
+        showAlert("Info", "Fitur update belum diimplementasikan");
     }
 
-    public Parent asParent() { return root; }
+    private void handleDeleteProduct() {
+        showAlert("Info", "Fitur delete belum diimplementasikan");
+    }
+
+    private void clearForm() {
+        nameField.clear();
+        priceField.clear();
+        stockField.clear();
+        codeField.clear();
+    }
+
+    private void loadProducts() {
+        productList.getItems().clear();
+        productList.getItems().addAll(controller.getAllProducts());
+    }
+
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
+    public VBox asParent() {
+        return root;
+    }
 }

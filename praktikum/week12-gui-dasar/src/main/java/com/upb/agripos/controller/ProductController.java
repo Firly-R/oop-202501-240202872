@@ -1,9 +1,8 @@
 package com.upb.agripos.controller;
 
-import com.upb.agripos.model.Product;
 import com.upb.agripos.service.ProductService;
-import java.util.List; // Penting: Menghilangkan error 'List cannot be resolved'
-import java.util.ArrayList;
+import com.upb.agripos.model.Product;
+import java.util.List;
 
 public class ProductController {
     private ProductService service;
@@ -12,25 +11,23 @@ public class ProductController {
         this.service = service;
     }
 
-    // Fungsi untuk menambah produk
-    public void addProduct(String code, String name, String price, String stock) {
-        try {
-            double p = Double.parseDouble(price);
-            int s = Integer.parseInt(stock);
-            Product product = new Product(code, name, p, s);
-            service.addProduct(product); // Mengirim ke service
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public void addProduct(Product product) {
+        service.addProduct(product);
     }
 
-    // Fungsi untuk mengambil daftar produk agar muncul di ListView
+    public Product getProduct(int id) {
+        return service.getProduct(id);
+    }
+
     public List<Product> getAllProducts() {
-        try {
-            return service.findAll(); // Memanggil service sesuai alur MVC
-        } catch (Exception e) {
-            e.printStackTrace();
-            return new ArrayList<>();
-        }
+        return service.getAllProducts();
+    }
+
+    public void updateProduct(Product product) {
+        service.updateProduct(product);
+    }
+
+    public void deleteProduct(int id) {
+        service.deleteProduct(id);
     }
 }
