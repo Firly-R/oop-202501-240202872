@@ -219,7 +219,7 @@ public class ProductTest {
 ---
 
 ## Hasil Eksekusi
-![Screenshot hasil](screenshots/jUnit_Test1.png)
+![Screenshot hasil](screenshots/JUnit_Test1.png)
 ![Screenshot hasil](screenshots/Hasilweek10.png)
 ---
 
