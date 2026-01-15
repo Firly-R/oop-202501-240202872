@@ -105,4 +105,16 @@ public class PosController {
     public int getCartItemCount() {
         return cartService.getCartItemCount();
     }
+
+    public void checkout() throws Exception {
+        try {
+            // Update stock untuk setiap item di keranjang
+            for (CartItem item : cartService.getCartItems()) {
+                productService.reduceStock(item.getProduct().getCode(), item.getQuantity());
+            }
+        } catch (Exception e) {
+            System.err.println("Error checkout: " + e.getMessage());
+            throw e;
+        }
+    }
 }

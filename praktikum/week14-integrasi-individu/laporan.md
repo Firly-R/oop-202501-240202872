@@ -18,6 +18,8 @@ Aplikasi **Agri-POS Week 14** adalah sistem point-of-sale (POS) kasir sederhana 
 - **Validasi & Exception Handling**: Custom exception untuk error handling yang proper
 - **Design Pattern**: Penerapan Singleton Pattern untuk Cart management
 - **Unit Testing**: JUnit test untuk validasi logika CartService
+- **Struk/Receipt**: Menampilkan detail transaksi saat checkout
+- **Stock Management**: Otomatis mengurangi stok produk setelah checkout
 
 ---
 
@@ -62,7 +64,8 @@ Aplikasi **Agri-POS Week 14** adalah sistem point-of-sale (POS) kasir sederhana 
 | UC-02 | Tambah Produk | Tombol | `addProduct()` | `addProduct()` | `insert()` | INSERT |
 | UC-03 | Hapus Produk | Tombol | `deleteProduct()` | `deleteProduct()` | `delete()` | DELETE |
 | UC-04 | Tambah Keranjang | Tombol | `addToCart()` | `addToCart()` | - | Memory |
-| UC-05 | Checkout | Tombol | `getCartTotal()` | `getCartTotal()` | - | Memory |
+| UC-05 | Checkout | Tombol | `checkout()` | `reduceStock()` | `update()` | UPDATE stock |
+| UC-06 | Tampil Struk | Checkout | `checkout()` | Struk detail | - | - |
 
 ---
 
@@ -124,11 +127,63 @@ mvn javafx:run
 
 ## 8. Kendala & Solusi
 
-### Kendala 1: Singleton Reset di Test
-**Solusi**: Memanggil `clearCart()` di `setUp()` untuk reset state.
+## 9. Fitur Tambahan - Struk & Stock Management
 
-### Kendala 2: Nested Object Property di TableColumn
-**Solusi**: Menggunakan lambda expression dengan `SimpleStringProperty`.
+### A. Struk/Receipt Display
+Ketika user melakukan checkout, aplikasi menampilkan struk terperinci dengan format:
+```
+════════════════════════════════════════
+          AGRI-POS RECEIPT
+════════════════════════════════════════
+Tanggal: [current timestamp]
+────────────────────────────────────────
+ITEM                    QTY   HARGA     SUBTOTAL
+────────────────────────────────────────
+[Product details untuk setiap item]
+────────────────────────────────────────
+GRAND TOTAL:                    Rp [amount]
+════════════════════════════════════════
+Terima Kasih atas pembelian Anda!
+════════════════════════════════════════
+```
+
+### B. Stock Management
+Setiap kali checkout dilakukan:
+1. Sistem memproses setiap item di keranjang
+2. Method `ProductService.reduceStock()` dipanggil
+3. Stok di database otomatis berkurang sesuai quantity yang dibeli
+4. UI refresh untuk menampilkan stok terbaru
+5. Validasi: Jika stok tidak cukup, transaksi ditolak dengan exception
+
+**Implementation Detail**:
+```java
+// ProductService.java
+public void reduceStock(String code, int quantity) throws ProductException {
+    Product product = getProductByCode(code);
+    if (product != null) {
+        int newStock = product.getStock() - quantity;
+        if (newStock < 0) {
+            throw new ProductException("Stok tidak cukup untuk kode produk: " + code);
+        }
+        product.setStock(newStock);
+        updateProduct(product); // Update ke database
+    }
+}
+
+// PosController.java
+public void checkout() throws Exception {
+    for (CartItem item : cartService.getCartItems()) {
+        productService.reduceStock(item.getProduct().getCode(), item.getQuantity());
+    }
+}
+
+// PosView.java
+private void showReceipt() {
+    // Build struk dengan detail items
+    // Show TextArea dialog dengan formatted receipt
+    // Clear cart setelah checkout
+}
+```
 
 ---
 
@@ -140,13 +195,33 @@ mvn javafx:run
 - [x] Custom exception `ProductException`
 - [x] Singleton Pattern pada Cart
 - [x] 9 JUnit test pass
-- [x] MVC architecture (DIP)
-- [x] Laporan & UML
-- [x] Console output identitas
+- [x] Tampilkan struk detail saat checkout ✨ NEW
+- [x] Stock otomatis berkurang setelah transaksi ✨ NEW
 
-**Status**: ✅ COMPLETE
+---
 
-**Date**: January 15, 2026
+## 10. Kendala & Solusi
+
+### Kendala 1: Singleton Reset di Test
+**Solusi**: Memanggil `clearCart()` di `setUp()` untuk reset state.
+
+### Kendala 2: Nested Object Property di TableColumn
+**Solusi**: Menggunakan lambda expression dengan `SimpleStringProperty`.
+
+### Kendala 3: Stock Update saat Checkout
+**Solusi**: Melakukan loop melalui semua CartItem dan update stock di database untuk setiap produk.
+
+---
+
+## Dasar Teori
+
+1. **MVC Architecture**: Pemisahan antara View (UI), Controller (logika interaksi), Model (data), dan Service (business logic).
+2. **DAO Pattern**: Abstraksi akses database melalui interface untuk memudahkan maintenance dan testing.
+3. **Singleton Pattern**: Memastikan hanya satu instance dari suatu class yang ada di memory (seperti Cart).
+4. **Collections**: Menggunakan List<T> untuk menyimpan multiple items dengan operasi CRUD yang efisien.
+5. **Exception Handling**: Menangani error secara proper dengan custom exception untuk akurasi pesan error.
+
+---
 
 ## Tujuan
 (Tuliskan tujuan praktikum minggu ini.  

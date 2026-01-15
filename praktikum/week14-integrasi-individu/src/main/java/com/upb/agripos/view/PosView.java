@@ -280,14 +280,32 @@ public class PosView {
         Button btnCheckout = new Button("Checkout");
         btnCheckout.setStyle("-fx-font-size: 11; -fx-padding: 8 20; -fx-font-weight: bold;");
         btnCheckout.setOnAction(e -> {
-            double total = controller.getCartTotal();
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Checkout");
-            alert.setHeaderText("Transaksi Berhasil");
-            alert.setContentText("Total Belanja: Rp " + String.format("%.2f", total));
-            alert.showAndWait();
-            controller.clearCart();
-            refreshCart();
+            if (controller.getCartItemCount() == 0) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Keranjang Kosong");
+                alert.setHeaderText("Tidak ada item");
+                alert.setContentText("Tambahkan produk ke keranjang terlebih dahulu");
+                alert.showAndWait();
+                return;
+            }
+            
+            try {
+                // Show receipt before processing
+                showReceipt();
+                
+                // Process checkout and reduce stock
+                controller.checkout();
+                
+                // Reload data to show updated stock
+                loadData();
+                
+            } catch (Exception ex) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error Checkout");
+                alert.setHeaderText("Gagal memproses transaksi");
+                alert.setContentText(ex.getMessage());
+                alert.showAndWait();
+            }
         });
 
         HBox actionBox = new HBox(10);
@@ -300,6 +318,60 @@ public class PosView {
 
     private void loadData() {
         productTable.setItems(FXCollections.observableArrayList(controller.getAllProducts()));
+        refreshCart();
+    }
+
+    private void showReceipt() {
+        StringBuilder struk = new StringBuilder();
+        struk.append("════════════════════════════════════════\n");
+        struk.append("          AGRI-POS RECEIPT\n");
+        struk.append("════════════════════════════════════════\n");
+        struk.append("Tanggal: ").append(java.time.LocalDateTime.now()).append("\n");
+        struk.append("────────────────────────────────────────\n");
+        struk.append("ITEM                    QTY   HARGA     SUBTOTAL\n");
+        struk.append("────────────────────────────────────────\n");
+        
+        double grandTotal = 0;
+        for (com.upb.agripos.model.CartItem item : controller.getCartItems()) {
+            String itemName = item.getProduct().getName();
+            if (itemName.length() > 18) {
+                itemName = itemName.substring(0, 15) + "...";
+            }
+            
+            double subtotal = item.getSubtotal();
+            grandTotal += subtotal;
+            
+            struk.append(String.format("%-18s %3d Rp%9.0f Rp%10.0f\n",
+                itemName,
+                item.getQuantity(),
+                item.getProduct().getPrice(),
+                subtotal
+            ));
+        }
+        
+        struk.append("────────────────────────────────────────\n");
+        struk.append(String.format("GRAND TOTAL:                    Rp %10.0f\n", grandTotal));
+        struk.append("════════════════════════════════════════\n");
+        struk.append("Terima Kasih atas pembelian Anda!\n");
+        struk.append("════════════════════════════════════════\n");
+        
+        // Show receipt dialog
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("STRUK PENJUALAN");
+        alert.setHeaderText("Transaksi Berhasil");
+        
+        TextArea textArea = new TextArea(struk.toString());
+        textArea.setEditable(false);
+        textArea.setWrapText(false);
+        textArea.setStyle("-fx-font-family: 'Monospaced'; -fx-font-size: 10;");
+        textArea.setPrefRowCount(15);
+        textArea.setPrefColumnCount(40);
+        
+        alert.getDialogPane().setContent(textArea);
+        alert.showAndWait();
+        
+        // Clear cart after showing receipt
+        controller.clearCart();
         refreshCart();
     }
 

@@ -36,4 +36,16 @@ public class ProductService {
     public Product getProductByCode(String code) throws ProductException {
         return productDAO.findByCode(code);
     }
+
+    public void reduceStock(String code, int quantity) throws ProductException {
+        Product product = getProductByCode(code);
+        if (product != null) {
+            int newStock = product.getStock() - quantity;
+            if (newStock < 0) {
+                throw new ProductException("Stok tidak cukup untuk kode produk: " + code);
+            }
+            product.setStock(newStock);
+            updateProduct(product);
+        }
+    }
 }
