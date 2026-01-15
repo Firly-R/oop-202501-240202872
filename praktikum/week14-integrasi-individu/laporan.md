@@ -85,6 +85,15 @@ Digunakan pada class `Cart` untuk memastikan satu instance keranjang global.
 - testAddToCartWithNegativeQuantity()
 - testAddToCartExceedsStock()
 - testGetCartItems()
+- testCartItemSubtotal()
+- testMultipleCheckoutScenarios()
+
+**ProductServiceTest** (3 test cases untuk stock reduction):
+- testReduceStock() - Verifikasi stok berkurang dengan benar
+- testReduceStockMultipleTimes() - Simulasi multiple transactions
+- testReduceStockExceedsAvailable() - Validasi tidak bisa minus stock
+
+**Total: 14 Test Cases - ALL PASS ✅**
 
 ---
 
@@ -98,6 +107,7 @@ Digunakan pada class `Cart` untuk memastikan satu instance keranjang global.
 - Stok tidak boleh negatif
 - Jumlah item keranjang > 0
 - Stock cukup untuk add to cart
+- **Stock tidak boleh minus saat checkout** ✨ NEW
 
 ---
 
@@ -114,7 +124,59 @@ CREATE TABLE products (
 
 ---
 
-## 7. Cara Menjalankan
+## 7. Stock Reduction Flow (Fitur Utama) ✨
+
+### Alur Checkout dengan Stock Update:
+
+1. **User klik Checkout** → Validasi keranjang tidak kosong
+2. **Show Receipt** → Tampilkan struk detail dengan semua items
+3. **Process Checkout** → Panggil `controller.checkout()`
+4. **Stock Reduction** → Loop setiap CartItem dan kurangi stock via `ProductService.reduceStock(code, qty)`
+5. **Database Update** → DAO melakukan UPDATE untuk setiap produk
+6. **UI Refresh** → Product table otomatis menampilkan stok terbaru
+7. **Clear Cart** → Kosongkan keranjang setelah transaksi selesai
+
+### Implementation Code:
+
+```java
+// PosView.java - Checkout button
+btnCheckout.setOnAction(e -> {
+    try {
+        showReceipt();              // Tampilkan struk
+        controller.checkout();      // Reduce stock di database
+        // Product table refresh otomatis via showReceipt()
+    } catch (Exception ex) {
+        // Handle error
+    }
+});
+
+// PosView.java - showReceipt()
+private void showReceipt() {
+    // Build dan tampilkan struk
+    // Clear cart
+    // REFRESH product table dengan stok terbaru
+    productTable.setItems(FXCollections.observableArrayList(
+        controller.getAllProducts()  // Load dari database
+    ));
+}
+
+// ProductService.java - reduceStock()
+public void reduceStock(String code, int quantity) throws ProductException {
+    Product product = getProductByCode(code);
+    int newStock = product.getStock() - quantity;
+    
+    if (newStock < 0) {
+        throw new ProductException("Stok tidak cukup");
+    }
+    
+    product.setStock(newStock);
+    updateProduct(product);  // Update ke database
+}
+```
+
+---
+
+## 8. Cara Menjalankan
 
 ```bash
 cd praktikum/week14-integrasi-individu
@@ -125,9 +187,9 @@ mvn javafx:run
 
 ---
 
-## 8. Kendala & Solusi
+## 9. Kendala & Solusi
 
-## 9. Fitur Tambahan - Struk & Stock Management
+## 10. Fitur Tambahan - Struk & Stock Management
 
 ### A. Struk/Receipt Display
 Ketika user melakukan checkout, aplikasi menampilkan struk terperinci dengan format:
@@ -220,12 +282,21 @@ private void showReceipt() {
 3. **Singleton Pattern**: Memastikan hanya satu instance dari suatu class yang ada di memory (seperti Cart).
 4. **Collections**: Menggunakan List<T> untuk menyimpan multiple items dengan operasi CRUD yang efisien.
 5. **Exception Handling**: Menangani error secara proper dengan custom exception untuk akurasi pesan error.
+6. **Transaction Management**: Memproses multiple database updates secara atomic saat checkout.
 
 ---
 
-## Tujuan
-(Tuliskan tujuan praktikum minggu ini.  
-Contoh: *Mahasiswa memahami konsep class dan object serta dapat membuat class Produk dengan enkapsulasi.*)
+## Tujuan Praktikum
+
+Mahasiswa mampu:
+1. Mengintegrasikan konsep OOP (Bab 1-5) ke aplikasi utuh
+2. Menerapkan UML + SOLID principles (Bab 6)
+3. Menggunakan Collections untuk keranjang belanja (Bab 7)
+4. Menangani exception dengan proper flow (Bab 9)
+5. Menerapkan design patterns dan unit testing (Bab 10)
+6. Mengintegrasikan database via DAO/JDBC (Bab 11)
+7. Membangun GUI responsif dengan JavaFX (Bab 12-13)
+8. **Mengelola state aplikasi dengan stock management real-time**
 
 ---
 

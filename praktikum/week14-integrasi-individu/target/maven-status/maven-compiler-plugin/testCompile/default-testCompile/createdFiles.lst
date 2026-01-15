@@ -1,1 +1,3 @@
+com\upb\agripos\service\ProductServiceTest.class
 com\upb\agripos\service\CartServiceTest.class
+com\upb\agripos\service\ProductServiceTest$MockProductDAO.class

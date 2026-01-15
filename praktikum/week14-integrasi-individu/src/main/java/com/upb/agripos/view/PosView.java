@@ -296,9 +296,6 @@ public class PosView {
                 // Process checkout and reduce stock
                 controller.checkout();
                 
-                // Reload data to show updated stock
-                loadData();
-                
             } catch (Exception ex) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error Checkout");
@@ -373,6 +370,9 @@ public class PosView {
         // Clear cart after showing receipt
         controller.clearCart();
         refreshCart();
+        
+        // Reload product data to show updated stock from database
+        productTable.setItems(FXCollections.observableArrayList(controller.getAllProducts()));
     }
 
     private void refreshCart() {

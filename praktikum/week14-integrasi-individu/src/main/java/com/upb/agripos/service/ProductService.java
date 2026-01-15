@@ -38,13 +38,21 @@ public class ProductService {
     }
 
     public void reduceStock(String code, int quantity) throws ProductException {
+        // Cari produk berdasarkan kode
         Product product = getProductByCode(code);
         if (product != null) {
+            // Hitung stok baru setelah transaksi
             int newStock = product.getStock() - quantity;
+            
+            // Validasi: stok tidak boleh negatif
             if (newStock < 0) {
                 throw new ProductException("Stok tidak cukup untuk kode produk: " + code);
             }
+            
+            // Update stok di object
             product.setStock(newStock);
+            
+            // Simpan perubahan ke database melalui DAO
             updateProduct(product);
         }
     }

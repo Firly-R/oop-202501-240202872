@@ -93,4 +93,27 @@ public class CartServiceTest {
         
         assertEquals(2, cartService.getCartItems().size());
     }
+
+    @Test
+    public void testCartItemSubtotal() {
+        cartService.addToCart(testProduct1, 3);
+        CartItem item = cartService.getCartItems().get(0);
+        assertEquals(150000, item.getSubtotal(), 0.01); // 3 * 50000
+    }
+
+    @Test
+    public void testMultipleCheckoutScenarios() {
+        // Simulasi multiple checkout scenarios
+        cartService.addToCart(testProduct1, 5);
+        cartService.addToCart(testProduct2, 10);
+        
+        double expectedTotal = (5 * 50000) + (10 * 12000);
+        assertEquals(expectedTotal, cartService.getCartTotal(), 0.01);
+        
+        // Clear dan test lagi
+        cartService.clearCart();
+        cartService.addToCart(testProduct1, 1);
+        assertEquals(1, cartService.getCartItemCount());
+        assertEquals(50000, cartService.getCartTotal(), 0.01);
+    }
 }
