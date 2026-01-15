@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MainDAOTest",
+            "request": "launch",
+            "mainClass": "com.upb.agripos.MainDAOTest",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "JALANKAN_GUI_AGRIPOS",
             "request": "launch",
             "mainClass": "com.upb.agripos.AppJavaFX",
