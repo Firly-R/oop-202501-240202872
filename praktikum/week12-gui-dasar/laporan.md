@@ -341,7 +341,7 @@ public class AppJavaFX extends Application {
 ---
 
 ## Hasil Eksekusi  
-![Screenshot hasil](screenshots/Hasilweek12.png)
+![Screenshot hasil](screenshots/hasilweek12.png)
 
 ---
 
