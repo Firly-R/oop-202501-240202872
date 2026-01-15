@@ -283,31 +283,18 @@ System.out.println(p1.getNama());
 ---
 
 ## Hasil Eksekusi
-(Sertakan screenshot hasil eksekusi program.  
-![Screenshot hasil](screenshots/hasil.png)
-)
----
 
-## Analisis
-(
-- Jelaskan bagaimana kode berjalan.  
-- Apa perbedaan pendekatan minggu ini dibanding minggu sebelumnya.  
-- Kendala yang dihadapi dan cara mengatasinya.  
-)
----
-
-## Kesimpulan
-(Tuliskan kesimpulan dari praktikum minggu ini.  
-Contoh: *Dengan menggunakan class dan object, program menjadi lebih terstruktur dan mudah dikembangkan.*)
+![Screenshot hasil](screenshots/hasilweek14.png)
 
 ---
 
-## Quiz
-(1. [Tuliskan kembali pertanyaan 1 dari panduan]  
-   **Jawaban:** …  
+##Analisis
 
-2. [Tuliskan kembali pertanyaan 2 dari panduan]  
-   **Jawaban:** …  
+Berdasarkan log error pada gambar, aplikasi Agri-POS saat ini mengalami kegagalan integrasi yang disebabkan oleh masalah konfigurasi lingkungan (Environment) dan inkonsistensi antar-layer kode. Status "non-project file" menunjukkan bahwa folder praktikum belum dibuka sebagai proyek Maven yang valid, sehingga VS Code tidak dapat menghubungkan dependensi antar-class, yang berujung pada banyaknya error "cannot be resolved". Selain itu, terdapat ketidaksesuaian kontrak metode antara View, Controller, dan Service, seperti kesalahan jumlah argumen pada addProduct dan penggunaan variabel clear yang tidak didefinisikan dengan benar sebagai metode (void). Hal ini menunjukkan bahwa prinsip Dependency Inversion (DIP) dan struktur MVC yang diwajibkan dalam Bab 14 belum tersinkronisasi sepenuhnya secara teknis maupun arsitektural.
 
-3. [Tuliskan kembali pertanyaan 3 dari panduan]  
-   **Jawaban:** …  )
+---
+##Kesimpulan
+
+Dapat disimpulkan bahwa aplikasi belum memenuhi Checklist Keberhasilan Bab 14 karena kode belum bisa dikompilasi (BUILD FAILURE) akibat kesalahan sintaksis dan kegagalan pemisahan layer yang fungsional. Untuk mencapai target integrasi individu, mahasiswa harus memastikan folder proyek dibuka dengan benar agar pom.xml terbaca, menyelaraskan nama serta parameter metode di seluruh tingkatan (View → Controller → Service → DAO), dan memperbaiki penanganan exception untuk validasi input. Keberhasilan proyek ini sangat bergantung pada konsistensi antara rancangan UML Bab 6 dengan implementasi nyata agar alur data dari GUI hingga database PostgreSQL dapat berjalan tanpa hambatan.
+
+---
