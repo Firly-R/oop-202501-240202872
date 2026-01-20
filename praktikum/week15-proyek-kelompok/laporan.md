@@ -19,11 +19,11 @@
 Industri pertanian Indonesia memerlukan solusi teknologi informasi yang terjangkau dan efisien untuk mengelola transaksi penjualan di tingkat grassroot (kios penjualan pertanian, toko retail produk pertanian). Sistem Point of Sale (POS) konvensional yang tersedia di pasaran seringkali mahal, kompleks, dan tidak disesuaikan dengan kebutuhan spesifik bisnis pertanian kecil-menengah.
 
 **Tantangan Bisnis yang Dihadapi:**
-- 🔴 **Perhitungan Manual**: Transaksi masih dilakukan dengan cara manual menggunakan kalkulator, mengakibatkan kesalahan perhitungan dan ketidakkonsistenan data
-- 🔴 **Tracking Stok Real-Time**: Tidak ada sistem monitoring stok secara real-time, sehingga sering terjadi over-selling atau under-stock
-- 🔴 **Audit Trail Terbatas**: Sulit melacak setiap transaksi dan perubahan data untuk keperluan audit dan deteksi fraud
-- 🔴 **Metode Pembayaran Terbatas**: Hanya mendukung pembayaran tunai, padahal semakin banyak pelanggan yang ingin menggunakan e-wallet
-- 🔴 **Laporan Penjualan Manual**: Pembuatan laporan memerlukan waktu lama dan rentan kesalahan
+- **Perhitungan Manual**: Transaksi masih dilakukan dengan cara manual menggunakan kalkulator, mengakibatkan kesalahan perhitungan dan ketidakkonsistenan data
+- **Tracking Stok Real-Time**: Tidak ada sistem monitoring stok secara real-time, sehingga sering terjadi over-selling atau under-stock
+- **Audit Trail Terbatas**: Sulit melacak setiap transaksi dan perubahan data untuk keperluan audit dan deteksi fraud
+- **Metode Pembayaran Terbatas**: Hanya mendukung pembayaran tunai, padahal semakin banyak pelanggan yang ingin menggunakan e-wallet
+- **Laporan Penjualan Manual**: Pembuatan laporan memerlukan waktu lama dan rentan kesalahan
 
 ### Tujuan Proyek
 
