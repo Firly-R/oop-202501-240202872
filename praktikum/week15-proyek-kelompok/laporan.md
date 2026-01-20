@@ -4,10 +4,10 @@
 ## Kelompok 1
 | No | Nama | NIM | Peran Utama | Kontribusi |
 |---|---|---|---|---|
-| 1 | Ismi Nur Fadilah | 240202868 | **Database Engineer & Lead** | DAO Layer, DatabaseConnection (Singleton), Schema Design, OFR-4 |
-| 2 | Radika Rismawati Tri Prasaja | 240202905 | **Backend Service Developer** | ProductService, DiscountStrategy (OFR-2), Business Logic |
-| 3 | Risky Dimas Nugroho | 240202882 | **Payment & Audit Developer** | TransactionService, PaymentMethod Strategy (FR-3), AuditLog (OFR-6) |
-| 4 | Abby Priyoguno | 240202848 | **Frontend GUI Developer** | JavaFX UI (LoginView, PosView, AdminDashboard), MVC Controller |
+| 1 | Radika Rismawati Tri Prasaja | 240202905 | **Database Engineer & Lead** | DAO Layer, DatabaseConnection (Singleton), Schema Design, OFR-4 |
+| 2 | Ismi Nur Fadilah | 240202868 | **Backend Service Developer** | ProductService, DiscountStrategy (OFR-2), Business Logic |
+| 3 | Abby Priyoguno | 240202848 | **Payment & Audit Developer** | TransactionService, PaymentMethod Strategy (FR-3), AuditLog (OFR-6) |
+| 4 | Risky Dimas Nugroho | 240202882 | **Frontend GUI Developer** | JavaFX UI (LoginView, PosView, AdminDashboard), MVC Controller |
 | 5 | Muhammad Firly Ramadhan | 240202872 | **QA & Documentation** | Testing, User Manual, Integration, Laporan |
 
 ---
@@ -278,8 +278,6 @@ public class DatabaseConnection {
 - Lazy initialization (hanya dibuat saat pertama kali diakses)
 - Thread-safe implementation
 
-**Implementasi di Codebase**: `src/main/java/com/upb/agripos/util/DatabaseConnection.java`
-
 ---
 
 #### **2. Strategy Pattern - Payment Methods**
@@ -376,11 +374,6 @@ public class TransactionService {
 - ✅ **DIP Principle**: Service depends pada interface, bukan concrete class
 - ✅ **Flexibility**: Payment method dapat dipilih saat runtime
 - ✅ **Testing**: Mudah untuk membuat mock/test payment method
-
-**Implementasi di Codebase**: 
-- `src/main/java/com/upb/agripos/discount/PaymentMethod.java` (interface)
-- `src/main/java/com/upb/agripos/discount/CashPayment.java`
-- `src/main/java/com/upb/agripos/discount/EWalletPayment.java`
 
 ---
 
@@ -496,12 +489,7 @@ public class PosController {
 - ✅ OCP: Tambah diskon tipe baru tanpa modifikasi existing
 - ✅ Testable: Setiap strategy dapat di-test independently
 - ✅ Maintainable: Logika diskon terisolasi dengan baik
-
-**Implementasi di Codebase**:
-- `src/main/java/com/upb/agripos/discount/DiscountStrategy.java` (interface)
-- `src/main/java/com/upb/agripos/discount/PercentageDiscount.java`
-- `src/main/java/com/upb/agripos/discount/FixedAmountDiscount.java`
-
+  
 ---
 
 #### **4. DAO (Data Access Object) Pattern**
@@ -688,12 +676,6 @@ public class ProductServiceImpl implements ProductService {
 - ✅ **Testability**: Mudah mock DAO untuk unit testing service
 - ✅ **Maintainability**: Perubahan SQL hanya mempengaruhi DAO
 - ✅ **Reusability**: DAO dapat di-reuse di berbagai services
-
-**Implementasi di Codebase**:
-- `src/main/java/com/upb/agripos/dao/ProductDAO.java`
-- `src/main/java/com/upb/agripos/dao/UserDAO.java`
-- `src/main/java/com/upb/agripos/dao/TransactionDAO.java`
-- `src/main/java/com/upb/agripos/dao/AuditLogDAO.java`
 
 ---
 
@@ -900,11 +882,6 @@ public class AppJavaFX extends Application {
 - ✅ **Maintainability**: Perubahan UI tidak mempengaruhi business logic
 - ✅ **Reusability**: Model dan service dapat digunakan berbagai views (web, mobile, dll)
 - ✅ **Scalability**: Mudah menambah fitur baru
-
-**Implementasi di Codebase**:
-- Model: `src/main/java/com/upb/agripos/model/`
-- View: `src/main/java/com/upb/agripos/view/`
-- Controller: `src/main/java/com/upb/agripos/controller/`
 
 ---
 
@@ -1358,7 +1335,7 @@ CREATE INDEX idx_audit_logs_user ON audit_logs(user_id);
 
 ## D. URAIAN IMPLEMENTASI SISTEM
 
-### Project Structure
+### Struktur Projek
 
 ```
 week15/
@@ -2122,90 +2099,23 @@ Service Call → DAO Method → JDBC → Database → ResultSet → Model Object
 - ✅ **OFR-6: Audit Log** - Complete activity logging (login, create, update, delete)
 
 #### **Quality Deliverables:**
-- ✅ **Architecture**: 4-tier layered architecture dengan clear separation
-- ✅ **Design Patterns**: 5 patterns implemented (Singleton, Strategy×2, DAO, MVC)
-- ✅ **SOLID Principles**: All 5 principles complied
-- ✅ **Database**: PostgreSQL with proper normalization (3NF) & integrity constraints
-- ✅ **GUI**: JavaFX dengan proper MVC
-- ✅ **Testing**: 14+ JUnit tests + 19 manual test cases (100% pass rate)
-- ✅ **Documentation**: Comprehensive code documentation & this report
+- ✅ **Architecture**: Menggunakan struktur 4 lapis (4-tier) yang memisahkan fungsi sistem secara jelas.
+- ✅ **Design Patterns**: Menerapkan 5 design pattern (Singleton, Strategy, DAO, MVC) untuk fleksibilitas kode.
+- ✅ **SOLID Principles**: Memenuhi kelima prinsip desain SOLID agar sistem kokoh dan mudah dikembangkan.
+- ✅ **Database**: Menggunakan PostgreSQL dengan skema yang bersih (3NF) dan data yang terintegrasi.
+- ✅ **GUI**: Menggunakan JavaFX dengan pola MVC agar tampilan dan logika program terpisah.
+- ✅ **Testing**: Berhasil melewati 14+ unit test dan 19 tes manual dengan tingkat kelulusan 100%.
+- ✅ **Documentation**: Dilengkapi penjelasan kode yang lengkap dan laporan teknis yang mendalam.
 
 ---
 
-### Demonstrasi Pemahaman OOP
-
-Tim telah menunjukkan pemahaman konseptual mendalam tentang:
-
-1. **OOP Fundamentals**
-   - Encapsulation: Private attributes dengan controlled access
-   - Inheritance: Interface-based design dengan multiple implementations
-   - Polymorphism: Runtime behavior variation via interfaces
-   - Abstraction: DAO & Service interfaces menyembunyikan implementation details
-
-2. **Design Patterns**
-   - **Singleton**: DatabaseConnection memastikan single instance
-   - **Strategy**: PaymentMethod & DiscountStrategy untuk flexible behavior
-   - **DAO**: Clean separation antara business logic & data persistence
-   - **MVC**: Clear distinction antara Model, View, Controller
-
-3. **SOLID Principles**
-   - **SRP**: Setiap class punya single, well-defined responsibility
-   - **OCP**: Easy to extend (e.g., tambah payment method) tanpa modify existing code
-   - **LSP**: Subtypes dapat disubstitusi untuk parent interface
-   - **ISP**: Focused interfaces tanpa unnecessary methods
-   - **DIP**: Depend pada abstractions, bukan concrete implementations
-
-4. **Enterprise Patterns**
-   - Layered architecture untuk scalability & maintainability
-   - Dependency injection untuk testability & loose coupling
-   - Custom exceptions untuk robust error handling
-   - Transaction management untuk data consistency
-
----
-
-### Teknologi Integration Quality
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│              AGRI-POS TECHNOLOGY INTEGRATION                │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│ JavaFX GUI (View)                                           │
-│   ↓ (Event-driven)                                          │
-│ MVC Controller (Orchestration)                              │
-│   ↓ (Validation & business logic)                           │
-│ Service Layer (Business Rules)                              │
-│   ├─ PaymentMethod (Strategy Pattern)                       │
-│   ├─ DiscountStrategy (Strategy Pattern)                    │
-│   └─ AuditLogService (Logging)                              │
-│   ↓ (Persistence)                                           │
-│ DAO Layer (JDBC)                                            │
-│   ├─ ProductDAO → SQL                                       │
-│   ├─ UserDAO → SQL                                          │
-│   ├─ TransactionDAO → SQL                                   │
-│   └─ AuditLogDAO → SQL                                      │
-│   ↓ (Connection management)                                 │
-│ DatabaseConnection (Singleton)                              │
-│   ↓ (JDBC Driver)                                           │
-│ PostgreSQL Database                                         │
-│   ├─ users, products, transactions, audit_logs              │
-│   ├─ Constraints: PK, FK, CHECK, UNIQUE, NOT NULL           │
-│   ├─ Indexes: status, date, user_id                         │
-│   └─ 3NF Normalization                                      │
-│                                                             │
-│ Result: Seamless integration dengan proper validation,      │
-│ error handling, & data consistency di setiap level          │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
-
-**Integration Quality Assessment:**
-- ✅ **JavaFX ↔ Controller**: Clean event handling, proper UI updates
-- ✅ **Controller ↔ Service**: Clear separation, proper validation
-- ✅ **Service ↔ DAO**: Loose coupling via interfaces
-- ✅ **DAO ↔ Database**: Secure JDBC implementation, connection pooling
-- ✅ **Error Handling**: Comprehensive exception handling across layers
-- ✅ **Data Consistency**: Transactions properly managed, constraints enforced
+**Evaluasi Kualitas Integrasi:**
+- ✅ **JavaFX ↔ Controller**: Hubungan antara tampilan (JavaFX) dan pengontrol sistem berjalan lancar dengan pembaruan data yang otomatis.
+- ✅ **Controller ↔ Service**: Pemisahan fungsi yang jelas antara pengaturan alur kerja dan logika bisnis, lengkap dengan validasi data yang tepat.
+- ✅ **Service ↔ DAO**: Hubungan antar komponen tidak kaku karena menggunakan antarmuka (interface), sehingga kode lebih fleksibel.
+- ✅ **DAO ↔ Database**: Koneksi ke database PostgreSQL aman dan efisien menggunakan implementasi JDBC yang stabil.
+- ✅ **Error Handling**: Sistem mampu menangani berbagai jenis kesalahan di setiap lapisan secara menyeluruh.
+- ✅ **Data Consistency**: Data tetap akurat dan aman berkat pengaturan transaksi yang baik serta aturan database yang ketat.
 
 ---
 
@@ -2265,19 +2175,17 @@ Melalui pengembangan Agri-POS, tim telah belajar:
 **Agri-POS** merepresentasikan implementasi praktis dan profesional dari konsep OOP, design patterns, dan best practices yang dipelajari sepanjang semester.
 
 Sistem ini menunjukkan:
-- 🎯 **Pemahaman Konseptual Mendalam**: Bukan sekadar implementasi teknis, tapi demonstrasi pemahaman fundamental
-- 🎯 **Architectural Thinking**: Desain sistem dengan clear separation of concerns
-- 🎯 **Code Quality**: Clean, maintainable, testable code
-- 🎯 **Integration Capability**: Seamless integration antara multiple technologies
-- 🎯 **Professional Development**: Ready-for-production quality dengan proper error handling & security
+- **Pemahaman Konseptual Mendalam**: Bukan sekadar implementasi teknis, tapi demonstrasi pemahaman fundamental
+- **Architectural Thinking**: Desain sistem dengan clear separation of concerns
+- **Code Quality**: Clean, maintainable, testable code
+- **Integration Capability**: Seamless integration antara multiple technologies
+- **Professional Development**: Ready-for-production quality dengan proper error handling & securityc
 
 Tim **telah menunjukkan kesiapan untuk enterprise application development** dengan professional coding standards, systematic problem-solving, dan architectural awareness yang excellent.
 
 ---
 
 ## LAMPIRAN
-
-### Lampiran A: Bukti Pendukung Proyek
 
 #### **Slide Presentasi**
 Slide presentasi mencakup:
@@ -2327,18 +2235,5 @@ Slide presentasi mencakup:
 - Database error: Check database permissions
 
 #### **GitHub Repository**
-Link: [akan ditambahkan setelah submission]
-
-Repository includes:
-- ✅ Complete source code (well-organized & documented)
-- ✅ README dengan setup instructions
-- ✅ All documentation files (laporan.md, USER_MANUAL.md, etc)
-- ✅ Database scripts (schema & seed data)
-- ✅ Clean commit history dengan meaningful messages
-- ✅ Tests (JUnit & manual test cases)
-
+Link: https://github.com/Masterq15/oop-202501-240202882
 ---
-
----
-
-*Agri-POS adalah hasil kolaborasi tim yang menunjukkan penguasaan konsep OOP dan best practices dalam software engineering.*
