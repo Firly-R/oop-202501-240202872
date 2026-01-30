@@ -1936,7 +1936,7 @@ TOTAL:                      14/14 ✅ ALL PASSED
    - Tombol Login
    - Pesan kesalahan jika login gagal
      
-   ![Screenshot hasil](screenshots/loginpage.png)
+![Screenshot hasil](screenshots/loginpage.png)
 
 2. **POS Dashboard**
    - Daftar produk dengan kategori
