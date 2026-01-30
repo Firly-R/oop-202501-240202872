@@ -1936,7 +1936,7 @@ TOTAL:                      14/14 ✅ ALL PASSED
    - Tombol Login
    - Pesan kesalahan jika login gagal
      
-![Screenshot hasil](screenshots/loginpage.png)
+![loginpage](/praktikum/week15-proyek-kelompok/screenshot/loginpage.png)
 
 2. **POS Dashboard**
    - Daftar produk dengan kategori
@@ -1945,14 +1945,14 @@ TOTAL:                      14/14 ✅ ALL PASSED
    - Pilihan metode pembayaran
    - Tombol Checkout
      
-   ![Screenshot hasil](screenshots/dashboardPOS.png)
+   ![Screenshot hasil](screenshot/dashboardPOS.png)
 
 3. **Proses Pembayaran**
    - Pembayaran tunai dengan perhitungan kembalian
    - Verifikasi saldo E-Wallet
    - Konfirmasi transaksi
      
-   ![Screenshot hasil](screenshots/checkout.png)
+   ![Screenshot hasil](screenshot/checkout.png)
 
 4. **Pembuatan Struk**
    - Struk detail berisi daftar item
@@ -1960,35 +1960,35 @@ TOTAL:                      14/14 ✅ ALL PASSED
    - Total jumlah yang dibayar
    - Nama Kasir & ID Transaksi
      
-   ![Screenshot hasil](screenshots/struk.png)
+   ![Screenshot hasil](screenshot/struk.png)
 
 5. **Admin Dashboard**
    - Manajemen Produk (Tambah/Ubah/Hapus)
    - Laporan penjualan (harian/bulanan)
    - Manajemen User
      
-   ![Screenshot hasil](screenshots/dashboaradmin.png)
+   ![Screenshot hasil](screenshot/dashboaradmin.png)
 
 6. **Manajemen User**
    - Tambah/Hapus User
    - Pengelolaan Akun Terpusat
    - Pengaturan role pengguna
      
-   ![Screenshot hasil](screenshots/manajemenuser.png)
+   ![Screenshot hasil](screenshot/manajemenuser.png)
 
 8. **Manajemen Produk**
    - Kode produk, nama, dan kategori
    - Input harga dengan validasi
    - Manajemen stok & tingkat pemesanan ulang (reorder level)
      
-   ![Screenshot hasil](screenshots/manajemenproduk.png)
+   ![Screenshot hasil](screenshot/manajemenproduk.png)
 
 9. **Laporan Transaksi & Penjualan**
    - Filter tanggal
    - Ringkasan keuangan
    - Tabel detail
      
-   ![Screenshot hasil](screenshots/laporan.png)
+   ![Screenshot hasil](screenshot/laporan.png)
 
 ---
 
