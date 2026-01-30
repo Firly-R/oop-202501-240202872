@@ -1,0 +1,5 @@
+com\upb\agripos\StockSynchronizationTest.class
+com\upb\agripos\service\PaymentServiceImplTest.class
+com\upb\agripos\discount\FixedDiscountPersonBTest.class
+com\upb\agripos\discount\PercentageDiscountPersonBTest.class
+com\upb\agripos\service\AuditLogServiceImplTest.class
