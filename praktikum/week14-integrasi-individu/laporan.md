@@ -1,14 +1,37 @@
 # Laporan Week 14 - Integrasi Individu (OOP + Database + GUI)
 Topik: Integrasi End-to-End OOP, Database, dan GUI JavaFX
 
-## Identitas
-- Nama  : 240202872
-- NIM   : 240202872
-- Kelas : OOP 2025
+ Nama  : Muhammad Firly Ramadhan
+ NIM   : 240202872
+ Kelas : 3IKRB
 
 ---
 
-## 1. Ringkasan Aplikasi
+##Dasar Teori
+
+1. **MVC Architecture**: Pemisahan antara View (UI), Controller (logika interaksi), Model (data), dan Service (business logic).
+2. **DAO Pattern**: Abstraksi akses database melalui interface untuk memudahkan maintenance dan testing.
+3. **Singleton Pattern**: Memastikan hanya satu instance dari suatu class yang ada di memory (seperti Cart).
+4. **Collections**: Menggunakan List<T> untuk menyimpan multiple items dengan operasi CRUD yang efisien.
+5. **Exception Handling**: Menangani error secara proper dengan custom exception untuk akurasi pesan error.
+6. **Transaction Management**: Memproses multiple database updates secara atomic saat checkout.
+
+---
+
+## Tujuan Praktikum
+
+Mahasiswa mampu:
+1. Mengintegrasikan konsep OOP (Bab 1-5) ke aplikasi utuh
+2. Menerapkan UML + SOLID principles (Bab 6)
+3. Menggunakan Collections untuk keranjang belanja (Bab 7)
+4. Menangani exception dengan proper flow (Bab 9)
+5. Menerapkan design patterns dan unit testing (Bab 10)
+6. Mengintegrasikan database via DAO/JDBC (Bab 11)
+7. Membangun GUI responsif dengan JavaFX (Bab 12-13)
+8. **Mengelola state aplikasi dengan stock management real-time**
+
+---
+##Ringkasan Aplikasi
 
 Aplikasi **Agri-POS Week 14** adalah sistem point-of-sale (POS) kasir sederhana untuk toko pertanian yang mengintegrasikan:
 
@@ -23,7 +46,7 @@ Aplikasi **Agri-POS Week 14** adalah sistem point-of-sale (POS) kasir sederhana 
 
 ---
 
-## 2. Keterangan Integrasi Bab 1-13
+##Keterangan Integrasi Bab 1-13
 
 ### Bab 1 (Setup & Hello World)
 - ✅ Identitas: "Hello World, I am 240202872" ditampilkan di console saat aplikasi start
@@ -56,7 +79,7 @@ Aplikasi **Agri-POS Week 14** adalah sistem point-of-sale (POS) kasir sederhana 
 
 ---
 
-## 3. Traceability Table (Bab 6 → Implementasi)
+##Traceability Table (Bab 6 → Implementasi)
 
 | Artefak | Use Case | Handler | Controller | Service | DAO | DB Impact |
 |---------|----------|---------|-----------|---------|-----|-----------|
@@ -69,7 +92,7 @@ Aplikasi **Agri-POS Week 14** adalah sistem point-of-sale (POS) kasir sederhana 
 
 ---
 
-## 4. Design Pattern & Testing
+##Design Pattern & Testing
 
 ### Singleton Pattern
 Digunakan pada class `Cart` untuk memastikan satu instance keranjang global.
@@ -97,7 +120,7 @@ Digunakan pada class `Cart` untuk memastikan satu instance keranjang global.
 
 ---
 
-## 5. Exception Handling
+##Exception Handling
 
 **Custom Exception**: `ProductException` untuk JDBC errors dan validasi input.
 
@@ -111,7 +134,7 @@ Digunakan pada class `Cart` untuk memastikan satu instance keranjang global.
 
 ---
 
-## 6. Database Schema
+##Database Schema
 
 ```sql
 CREATE TABLE products (
@@ -124,7 +147,7 @@ CREATE TABLE products (
 
 ---
 
-## 7. Stock Reduction Flow (Fitur Utama) ✨
+##Stock Reduction Flow (Fitur Utama) ✨
 
 ### Alur Checkout dengan Stock Update:
 
@@ -136,7 +159,7 @@ CREATE TABLE products (
 6. **UI Refresh** → Product table otomatis menampilkan stok terbaru
 7. **Clear Cart** → Kosongkan keranjang setelah transaksi selesai
 
-### Implementation Code:
+###Implementation Code:
 
 ```java
 // PosView.java - Checkout button
@@ -176,7 +199,7 @@ public void reduceStock(String code, int quantity) throws ProductException {
 
 ---
 
-## 8. Cara Menjalankan
+##Cara Menjalankan
 
 ```bash
 cd praktikum/week14-integrasi-individu
@@ -187,9 +210,7 @@ mvn javafx:run
 
 ---
 
-## 9. Kendala & Solusi
-
-## 10. Fitur Tambahan - Struk & Stock Management
+##Fitur Tambahan - Struk & Stock Management
 
 ### A. Struk/Receipt Display
 Ketika user melakukan checkout, aplikasi menampilkan struk terperinci dengan format:
@@ -209,7 +230,7 @@ Terima Kasih atas pembelian Anda!
 ════════════════════════════════════════
 ```
 
-### B. Stock Management
+###Stock Management
 Setiap kali checkout dilakukan:
 1. Sistem memproses setiap item di keranjang
 2. Method `ProductService.reduceStock()` dipanggil
@@ -249,73 +270,6 @@ private void showReceipt() {
 
 ---
 
-## 9. Checklist Keberhasilan
-
-- [x] Aplikasi JavaFX berjalan
-- [x] CRUD dengan JDBC & PostgreSQL
-- [x] Keranjang menggunakan Collections
-- [x] Custom exception `ProductException`
-- [x] Singleton Pattern pada Cart
-- [x] 9 JUnit test pass
-- [x] Tampilkan struk detail saat checkout ✨ NEW
-- [x] Stock otomatis berkurang setelah transaksi ✨ NEW
-
----
-
-## 10. Kendala & Solusi
-
-### Kendala 1: Singleton Reset di Test
-**Solusi**: Memanggil `clearCart()` di `setUp()` untuk reset state.
-
-### Kendala 2: Nested Object Property di TableColumn
-**Solusi**: Menggunakan lambda expression dengan `SimpleStringProperty`.
-
-### Kendala 3: Stock Update saat Checkout
-**Solusi**: Melakukan loop melalui semua CartItem dan update stock di database untuk setiap produk.
-
----
-
-## Dasar Teori
-
-1. **MVC Architecture**: Pemisahan antara View (UI), Controller (logika interaksi), Model (data), dan Service (business logic).
-2. **DAO Pattern**: Abstraksi akses database melalui interface untuk memudahkan maintenance dan testing.
-3. **Singleton Pattern**: Memastikan hanya satu instance dari suatu class yang ada di memory (seperti Cart).
-4. **Collections**: Menggunakan List<T> untuk menyimpan multiple items dengan operasi CRUD yang efisien.
-5. **Exception Handling**: Menangani error secara proper dengan custom exception untuk akurasi pesan error.
-6. **Transaction Management**: Memproses multiple database updates secara atomic saat checkout.
-
----
-
-## Tujuan Praktikum
-
-Mahasiswa mampu:
-1. Mengintegrasikan konsep OOP (Bab 1-5) ke aplikasi utuh
-2. Menerapkan UML + SOLID principles (Bab 6)
-3. Menggunakan Collections untuk keranjang belanja (Bab 7)
-4. Menangani exception dengan proper flow (Bab 9)
-5. Menerapkan design patterns dan unit testing (Bab 10)
-6. Mengintegrasikan database via DAO/JDBC (Bab 11)
-7. Membangun GUI responsif dengan JavaFX (Bab 12-13)
-8. **Mengelola state aplikasi dengan stock management real-time**
-
----
-
-## Dasar Teori
-(Tuliskan ringkasan teori singkat (3–5 poin) yang mendasari praktikum.  
-Contoh:  
-1. Class adalah blueprint dari objek.  
-2. Object adalah instansiasi dari class.  
-3. Enkapsulasi digunakan untuk menyembunyikan data.)
-
----
-
-## Langkah Praktikum
-(Tuliskan Langkah-langkah dalam prakrikum, contoh:
-1. Langkah-langkah yang dilakukan (setup, coding, run).  
-2. File/kode yang dibuat.  
-3. Commit message yang digunakan.)
-
----
 
 ## Kode Program
 (Tuliskan kode utama yang dibuat, contoh:  
@@ -329,31 +283,18 @@ System.out.println(p1.getNama());
 ---
 
 ## Hasil Eksekusi
-(Sertakan screenshot hasil eksekusi program.  
-![Screenshot hasil](screenshots/hasil.png)
-)
----
 
-## Analisis
-(
-- Jelaskan bagaimana kode berjalan.  
-- Apa perbedaan pendekatan minggu ini dibanding minggu sebelumnya.  
-- Kendala yang dihadapi dan cara mengatasinya.  
-)
----
-
-## Kesimpulan
-(Tuliskan kesimpulan dari praktikum minggu ini.  
-Contoh: *Dengan menggunakan class dan object, program menjadi lebih terstruktur dan mudah dikembangkan.*)
+![Screenshot hasil](screenshots/hasilweek14.png)
 
 ---
 
-## Quiz
-(1. [Tuliskan kembali pertanyaan 1 dari panduan]  
-   **Jawaban:** …  
+##Analisis
 
-2. [Tuliskan kembali pertanyaan 2 dari panduan]  
-   **Jawaban:** …  
+Berdasarkan log error pada gambar, aplikasi Agri-POS saat ini mengalami kegagalan integrasi yang disebabkan oleh masalah konfigurasi lingkungan (Environment) dan inkonsistensi antar-layer kode. Status "non-project file" menunjukkan bahwa folder praktikum belum dibuka sebagai proyek Maven yang valid, sehingga VS Code tidak dapat menghubungkan dependensi antar-class, yang berujung pada banyaknya error "cannot be resolved". Selain itu, terdapat ketidaksesuaian kontrak metode antara View, Controller, dan Service, seperti kesalahan jumlah argumen pada addProduct dan penggunaan variabel clear yang tidak didefinisikan dengan benar sebagai metode (void). Hal ini menunjukkan bahwa prinsip Dependency Inversion (DIP) dan struktur MVC yang diwajibkan dalam Bab 14 belum tersinkronisasi sepenuhnya secara teknis maupun arsitektural.
 
-3. [Tuliskan kembali pertanyaan 3 dari panduan]  
-   **Jawaban:** …  )
+---
+##Kesimpulan
+
+Dapat disimpulkan bahwa aplikasi belum memenuhi Checklist Keberhasilan Bab 14 karena kode belum bisa dikompilasi (BUILD FAILURE) akibat kesalahan sintaksis dan kegagalan pemisahan layer yang fungsional. Untuk mencapai target integrasi individu, mahasiswa harus memastikan folder proyek dibuka dengan benar agar pom.xml terbaca, menyelaraskan nama serta parameter metode di seluruh tingkatan (View → Controller → Service → DAO), dan memperbaiki penanganan exception untuk validasi input. Keberhasilan proyek ini sangat bergantung pada konsistensi antara rancangan UML Bab 6 dengan implementasi nyata agar alur data dari GUI hingga database PostgreSQL dapat berjalan tanpa hambatan.
+
+---

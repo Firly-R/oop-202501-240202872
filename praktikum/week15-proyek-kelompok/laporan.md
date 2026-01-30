@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 📋 LAPORAN AKHIR PROYEK SEMESTER - WEEK 17
 ## Agri-POS: Sistem Point of Sale Terintegrasi Berbasis OOP
 
@@ -11,10 +12,30 @@
 ## 📌 A. PENDAHULUAN
 
 ### A.1 Latar Belakang Proyek
+=======
+# LAPORAN AKHIR PROYEK SEMESTER 
+## Agri-POS: Sistem Point of Sale Terintegrasi Berbasis OOP
+
+## Kelompok 1
+| No | Nama | NIM | Peran Utama | Kontribusi |
+|---|---|---|---|---|
+| 1 | Radika Rismawati Tri Prasaja | 240202905 | **Database Engineer & Lead** | DAO Layer, DatabaseConnection (Singleton), Schema Design, OFR-4 |
+| 2 | Ismi Nur Fadilah | 240202868 | **Backend Service Developer** | ProductService, DiscountStrategy (OFR-2), Business Logic |
+| 3 | Abby Priyoguno | 240202848 | **Payment & Audit Developer** | TransactionService, PaymentMethod Strategy (FR-3), AuditLog (OFR-6) |
+| 4 | Risky Dimas Nugroho | 240202882 | **Frontend GUI Developer** | JavaFX UI (LoginView, PosView, AdminDashboard), MVC Controller |
+| 5 | Muhammad Firly Ramadhan | 240202872 | **QA & Documentation** | Testing, User Manual, Integration, Laporan |
+
+---
+
+## A. PENDAHULUAN
+
+### Latar Belakang
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 
 Industri pertanian Indonesia memerlukan solusi teknologi informasi yang terjangkau dan efisien untuk mengelola transaksi penjualan di tingkat grassroot (kios penjualan pertanian, toko retail produk pertanian). Sistem Point of Sale (POS) konvensional yang tersedia di pasaran seringkali mahal, kompleks, dan tidak disesuaikan dengan kebutuhan spesifik bisnis pertanian kecil-menengah.
 
 **Tantangan Bisnis yang Dihadapi:**
+<<<<<<< HEAD
 - 🔴 **Perhitungan Manual**: Transaksi masih dilakukan dengan cara manual menggunakan kalkulator, mengakibatkan kesalahan perhitungan dan ketidakkonsistenan data
 - 🔴 **Tracking Stok Real-Time**: Tidak ada sistem monitoring stok secara real-time, sehingga sering terjadi over-selling atau under-stock
 - 🔴 **Audit Trail Terbatas**: Sulit melacak setiap transaksi dan perubahan data untuk keperluan audit dan deteksi fraud
@@ -39,11 +60,29 @@ Industri pertanian Indonesia memerlukan solusi teknologi informasi yang terjangk
 5. **Architectural Thinking**: Mendesain sistem dengan layered architecture yang memiliki clear separation of concerns
 6. **Testing**: Menulis unit tests dan melakukan manual testing untuk memastikan reliability
 7. **Documentation**: Membuat dokumentasi yang jelas mencerminkan pemahaman konseptual, bukan hanya dokumentasi teknis
+=======
+- **Perhitungan Manual**: Transaksi masih dilakukan dengan cara manual menggunakan kalkulator, mengakibatkan kesalahan perhitungan dan ketidakkonsistenan data
+- **Tracking Stok Real-Time**: Tidak ada sistem monitoring stok secara real-time, sehingga sering terjadi over-selling atau under-stock
+- **Audit Trail Terbatas**: Sulit melacak setiap transaksi dan perubahan data untuk keperluan audit dan deteksi fraud
+- **Metode Pembayaran Terbatas**: Hanya mendukung pembayaran tunai, padahal semakin banyak pelanggan yang ingin menggunakan e-wallet
+- **Laporan Penjualan Manual**: Pembuatan laporan memerlukan waktu lama dan rentan kesalahan
+
+### Tujuan Proyek
+
+#### **Tujuan Fungsional (Business Goals):**
+1. **Fasilitasi Transaksi Penjualan**: Sistem dapat memproses transaksi dengan cepat, akurat, dan efisien
+2. **Manajemen Inventory Real-Time**: Melacak stok produk secara real-time dengan otomatis ketika stok menipis
+3. **Fleksibilitas Pembayaran**: Mendukung multiple payment methods (tunai, e-wallet) dengan validasi otomatis
+4. **Sistem Diskon/Promo**: Implementasi strategi diskon yang fleksibel (persentase atau fixed amount)
+5. **Audit Trail Lengkap**: Memelihara log lengkap untuk setiap aksi (login, transaksi, perubahan data) untuk keperluan audit dan compliance
+6. **Laporan Penjualan**: Digitalisasi bukti pembayaran dan pelaporan penjualan rutin
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 
 ---
 
 ## B. DESKRIPSI SISTEM & FITUR UTAMA
 
+<<<<<<< HEAD
 ### B.1 Gambaran Umum Sistem
 
 **Agri-POS** adalah aplikasi Point of Sale yang dirancang khusus untuk memenuhi kebutuhan toko/kios penjualan pertanian. Sistem dibangun dengan arsitektur berlapis (layered architecture) yang memisahkan concern antara presentation layer (GUI), business logic layer (service), dan data access layer (DAO), sehingga mudah di-maintain, di-test, dan di-scale.
@@ -58,6 +97,14 @@ Testing:   JUnit + Manual Testing
 ```
 
 ### B.2 User Roles dan Workflow
+=======
+### Gambaran Umum Sistem
+
+**Agri-POS** adalah aplikasi Point of Sale yang dirancang khusus untuk memenuhi kebutuhan toko/kios penjualan pertanian. Sistem dibangun dengan arsitektur berlapis (layered architecture) yang memisahkan concern antara presentation layer (GUI), business logic layer (service), dan data access layer (DAO), sehingga mudah di-maintain, di-test, dan di-scale.
+
+
+### User Roles dan Workflow
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 
 #### **Role 1: Kasir (Cashier)**
 Kasir bertanggung jawab untuk melakukan transaksi penjualan kepada pelanggan.
@@ -69,11 +116,19 @@ Kasir bertanggung jawab untuk melakukan transaksi penjualan kepada pelanggan.
 ├─────────────────────────────────────────────────────────────┤
 │ 1. Login ke sistem                                          │
 │ 2. View daftar produk yang tersedia (dengan kategori)       │
+<<<<<<< HEAD
 │ 3. Scan barcode atau pilih produk dari list                │
 │ 4. Input quantity & tambah ke shopping cart                 │
 │ 5. Review cart, remove items jika perlu                     │
 │ 6. Apply discount (jika ada promo)                          │
 │ 7. Select payment method (Cash atau E-Wallet)              │
+=======
+│ 3. Scan barcode atau pilih produk dari list                 │
+│ 4. Input quantity & tambah ke shopping cart                 │
+│ 5. Review cart, remove items jika perlu                     │
+│ 6. Apply discount (jika ada promo)                          │
+│ 7. Select payment method (Cash atau E-Wallet)               │
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 │ 8. Process payment dengan validasi                          │
 │ 9. Generate & print receipt                                 │
 │ 10. Logout                                                  │
@@ -92,10 +147,17 @@ Admin bertanggung jawab untuk mengelola produk, monitoring stok, viewing laporan
 │ 2. Manage Produk (CRUD):                                    │
 │    - Create: input produk baru                              │
 │    - Read: view daftar produk                               │
+<<<<<<< HEAD
 │    - Update: edit harga, stok, atau kategori               │
 │    - Delete: hapus produk                                   │
 │ 3. Monitor Stock:                                           │
 │    - View status stok (NORMAL, LOW_STOCK, DISCONTINUED)    │
+=======
+│    - Update: edit harga, stok, atau kategori                │
+│    - Delete: hapus produk                                   │
+│ 3. Monitor Stock:                                           │
+│    - View status stok (NORMAL, LOW_STOCK, DISCONTINUED)     │
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 │    - Get alert untuk produk low stock                       │
 │ 4. View Sales Reports:                                      │
 │    - Daily/monthly sales summary                            │
@@ -108,7 +170,11 @@ Admin bertanggung jawab untuk mengelola produk, monitoring stok, viewing laporan
 └─────────────────────────────────────────────────────────────┘
 ```
 
+<<<<<<< HEAD
 ### B.3 Fitur Utama Sistem
+=======
+### Fitur Utama Sistem
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 
 #### **Fitur Wajib (Functional Requirements):**
 
@@ -128,13 +194,21 @@ Admin bertanggung jawab untuk mengelola produk, monitoring stok, viewing laporan
 | **OFR-4** | Inventori Lanjutan | Auto-update product status (LOW_STOCK, DISCONTINUED) | Event-based | ✅ |
 | **OFR-6** | Audit Log | Complete activity logging (login, create, update, delete) | Logger service | ✅ |
 
+<<<<<<< HEAD
 ### B.4 Model Data Utama
+=======
+### Model Data Utama
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 
 ```
 ┌──────────────────────────────────────────────────────────────┐
 │ DATA MODEL - AGRI-POS                                        │
 ├──────────────────────────────────────────────────────────────┤
+<<<<<<< HEAD
 │                                                               │
+=======
+│                                                              │
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 │ Product                    User                              │
 │ ─────────────────────────  ──────────────────────            │
 │ - code (PK)               - userId (PK)                      │
@@ -152,6 +226,7 @@ Admin bertanggung jawab untuk mengelola produk, monitoring stok, viewing laporan
 │ - transactionDate                                            │
 │ - items (List<CartItem>)  PaymentMethod (Interface)          │
 │ - subtotal                ─────────────────────────          │
+<<<<<<< HEAD
 │ - discountAmount          - validatePayment()               │
 │ - totalAmount             - processPayment()                │
 │ - paymentMethod                                              │
@@ -160,6 +235,16 @@ Admin bertanggung jawab untuk mengelola produk, monitoring stok, viewing laporan
 │                                                               │
 │ AuditLog                                                      │
 │ ──────────────────────────                                    │
+=======
+│ - discountAmount          - validatePayment()                │
+│ - totalAmount             - processPayment()                 │
+│ - paymentMethod                                              │
+│ - status                  CashPayment                        │
+│ - receipt                 EWalletPayment                     │
+│                                                              │
+│ AuditLog                                                     │
+│ ──────────────────────────                                   │
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 │ - logId (PK)                                                 │
 │ - userId (FK)                                                │
 │ - timestamp                                                  │
@@ -167,7 +252,11 @@ Admin bertanggung jawab untuk mengelola produk, monitoring stok, viewing laporan
 │ - tableName                                                  │
 │ - recordId                                                   │
 │ - details                                                    │
+<<<<<<< HEAD
 │                                                               │
+=======
+│                                                              │
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 └──────────────────────────────────────────────────────────────┘
 ```
 
@@ -175,7 +264,11 @@ Admin bertanggung jawab untuk mengelola produk, monitoring stok, viewing laporan
 
 ## C. DESAIN & ARSITEKTUR SISTEM BERBASIS OOP
 
+<<<<<<< HEAD
 ### C.1 Layered Architecture (4-Tier)
+=======
+### Layered Architecture (4-Tier)
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 
 Sistem Agri-POS menggunakan **layered architecture** untuk memastikan separation of concerns dan memudahkan testing, maintenance, dan scalability.
 
@@ -183,14 +276,22 @@ Sistem Agri-POS menggunakan **layered architecture** untuk memastikan separation
 ┌────────────────────────────────────────────────────────────────┐
 │                     TIER 4: PRESENTATION LAYER                 │
 │                      (JavaFX GUI Components)                   │
+<<<<<<< HEAD
 │  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────┐ │
 │  │  LoginView       │  │  PosView         │  │ AdminDashboard  │
 │  │  (Auth Scene)    │  │  (Transaksi)     │  │ (Manage)        │
 │  └──────────────────┘  └──────────────────┘  └──────────────┘ │
+=======
+│  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────┐  │
+│  │  LoginView       │  │  PosView         │  │ AdminDashboard  │
+│  │  (Auth Scene)    │  │  (Transaksi)     │  │ (Manage)        │
+│  └──────────────────┘  └──────────────────┘  └──────────────┘  │
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 │            │                   │                      │        │
 └────────────┼───────────────────┼──────────────────────┼────────┘
              │                   │                      │
 ┌────────────┴───────────────────┴──────────────────────┴────────┐
+<<<<<<< HEAD
 │                   TIER 3: CONTROLLER LAYER (MVC)                │
 │               (Event Handling & User Interaction)               │
 │  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────┐ │
@@ -198,18 +299,36 @@ Sistem Agri-POS menggunakan **layered architecture** untuk memastikan separation
 │  │ - handleLogin()  │  │ - handleAddItem()│  │ - handleAdd()   │
 │  │ - handleLogout() │  │ - handleCheckout()  │ - handleDelete()│
 │  └──────────────────┘  └──────────────────┘  └──────────────┘ │
+=======
+│                   TIER 3: CONTROLLER LAYER (MVC)               │
+│               (Event Handling & User Interaction)              │
+│  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────┐  │
+│  │ AuthController   │  │ PosController    │  │ AdminController │
+│  │ - handleLogin()  │  │ - handleAddItem()│  │ - handleAdd()   │
+│  │ - handleLogout() │  │ - handleCheckout()  │ - handleDelete()│
+│  └──────────────────┘  └──────────────────┘  └──────────────┘  │
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 │            │                   │                      │        │
 └────────────┼───────────────────┼──────────────────────┼────────┘
              │                   │                      │
 ┌────────────┴───────────────────┴──────────────────────┴────────┐
 │                   TIER 2: SERVICE LAYER                        │
 │              (Business Logic & Validation)                     │
+<<<<<<< HEAD
 │  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────┐ │
 │  │ AuthService      │  │ ProductService   │  │ TransactionSrv  │
 │  │ - login()        │  │ - addProduct()   │  │ - checkout()    │
 │  │ - logout()       │  │ - updateStok()   │  │ - calcTotal()   │
 │  └──────────────────┘  └──────────────────┘  └──────────────┘ │
 │  ┌──────────────────┐  ┌──────────────────┐                   │
+=======
+│  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────┐  │
+│  │ AuthService      │  │ ProductService   │  │ TransactionSrv  │
+│  │ - login()        │  │ - addProduct()   │  │ - checkout()    │
+│  │ - logout()       │  │ - updateStok()   │  │ - calcTotal()   │
+│  └──────────────────┘  └──────────────────┘  └──────────────┘  │
+│  ┌──────────────────┐  ┌──────────────────┐                    │
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 │  │ PaymentStrategy  │  │ DiscountStrategy │                    │
 │  │ - CashPayment    │  │ - Percentage     │                    │
 │  │ - EWalletPayment │  │ - FixedAmount    │                    │
@@ -220,14 +339,24 @@ Sistem Agri-POS menggunakan **layered architecture** untuk memastikan separation
 ┌────────────┴───────────────────┴──────────────────────┴────────┐
 │                   TIER 1: DAO LAYER                            │
 │              (Data Access & Persistence)                       │
+<<<<<<< HEAD
 │  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────┐ │
+=======
+│  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────┐  │
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 │  │ ProductDAO       │  │ UserDAO          │  │ TransactionDAO  │
 │  │ - insert()       │  │ - insert()       │  │ - insert()      │
 │  │ - findByCode()   │  │ - findByUsername()  │ - findAll()     │
 │  │ - updateStok()   │  │ - verify()       │  │ - delete()      │
+<<<<<<< HEAD
 │  └──────────────────┘  └──────────────────┘  └──────────────┘ │
 │  ┌──────────────────┐  ┌──────────────────┐                   │
 │  │ AuditLogDAO      │  │ DatabaseConnection  │                 │
+=======
+│  └──────────────────┘  └──────────────────┘  └──────────────┘  │
+│  ┌──────────────────┐  ┌──────────────────┐                    │
+│  │ AuditLogDAO      │  │ DatabaseConnection│                   │
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 │  │ - insert()       │  │ (Singleton)      │                    │
 │  │ - findByUser()   │  │ - getInstance()  │                    │
 │  └──────────────────┘  └──────────────────┘                    │
@@ -237,10 +366,17 @@ Sistem Agri-POS menggunakan **layered architecture** untuk memastikan separation
 ┌────────────┴───────────────────┴──────────────────────┴────────┐
 │                   TIER 0: DATABASE LAYER                       │
 │                    (PostgreSQL Database)                       │
+<<<<<<< HEAD
 │  ┌─────────────────────────────────────────────────────────┐ │
 │  │  tables: users, products, transactions, audit_logs,     │ │
 │  │          cart_items, payment_methods, etc               │ │
 │  └─────────────────────────────────────────────────────────┘ │
+=======
+│  ┌─────────────────────────────────────────────────────────┐   │
+│  │  tables: users, products, transactions, audit_logs,     │   │
+│  │          cart_items, payment_methods, etc               │   │
+│  └─────────────────────────────────────────────────────────┘   │
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 └────────────────────────────────────────────────────────────────┘
 ```
 
@@ -251,7 +387,11 @@ Sistem Agri-POS menggunakan **layered architecture** untuk memastikan separation
 - ✅ **Reusability**: DAO & Service dapat di-reuse di berbagai aplikasi
 - ✅ **Separation of Concerns**: Setiap layer memiliki tanggung jawab yang jelas
 
+<<<<<<< HEAD
 ### C.2 Design Patterns Implementasi
+=======
+### Design Patterns Implementasi
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 
 #### **1. Singleton Pattern - Database Connection**
 
@@ -290,8 +430,11 @@ public class DatabaseConnection {
 - Single connection instance shared across application
 - Lazy initialization (hanya dibuat saat pertama kali diakses)
 - Thread-safe implementation
+<<<<<<< HEAD
 
 **Implementasi di Codebase**: `src/main/java/com/upb/agripos/util/DatabaseConnection.java`
+=======
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 
 ---
 
@@ -390,11 +533,14 @@ public class TransactionService {
 - ✅ **Flexibility**: Payment method dapat dipilih saat runtime
 - ✅ **Testing**: Mudah untuk membuat mock/test payment method
 
+<<<<<<< HEAD
 **Implementasi di Codebase**: 
 - `src/main/java/com/upb/agripos/discount/PaymentMethod.java` (interface)
 - `src/main/java/com/upb/agripos/discount/CashPayment.java`
 - `src/main/java/com/upb/agripos/discount/EWalletPayment.java`
 
+=======
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 ---
 
 #### **3. Strategy Pattern - Discount Strategies**
@@ -509,12 +655,16 @@ public class PosController {
 - ✅ OCP: Tambah diskon tipe baru tanpa modifikasi existing
 - ✅ Testable: Setiap strategy dapat di-test independently
 - ✅ Maintainable: Logika diskon terisolasi dengan baik
+<<<<<<< HEAD
 
 **Implementasi di Codebase**:
 - `src/main/java/com/upb/agripos/discount/DiscountStrategy.java` (interface)
 - `src/main/java/com/upb/agripos/discount/PercentageDiscount.java`
 - `src/main/java/com/upb/agripos/discount/FixedAmountDiscount.java`
 
+=======
+  
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 ---
 
 #### **4. DAO (Data Access Object) Pattern**
@@ -702,12 +852,15 @@ public class ProductServiceImpl implements ProductService {
 - ✅ **Maintainability**: Perubahan SQL hanya mempengaruhi DAO
 - ✅ **Reusability**: DAO dapat di-reuse di berbagai services
 
+<<<<<<< HEAD
 **Implementasi di Codebase**:
 - `src/main/java/com/upb/agripos/dao/ProductDAO.java`
 - `src/main/java/com/upb/agripos/dao/UserDAO.java`
 - `src/main/java/com/upb/agripos/dao/TransactionDAO.java`
 - `src/main/java/com/upb/agripos/dao/AuditLogDAO.java`
 
+=======
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 ---
 
 #### **5. MVC (Model-View-Controller) Pattern**
@@ -914,6 +1067,7 @@ public class AppJavaFX extends Application {
 - ✅ **Reusability**: Model dan service dapat digunakan berbagai views (web, mobile, dll)
 - ✅ **Scalability**: Mudah menambah fitur baru
 
+<<<<<<< HEAD
 **Implementasi di Codebase**:
 - Model: `src/main/java/com/upb/agripos/model/`
 - View: `src/main/java/com/upb/agripos/view/`
@@ -922,6 +1076,11 @@ public class AppJavaFX extends Application {
 ---
 
 ### C.3 SOLID Principles Implementation
+=======
+---
+
+### SOLID Principles Implementation
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 
 #### **1. Single Responsibility Principle (SRP)**
 
@@ -1265,7 +1424,11 @@ public class PosController {
 
 ---
 
+<<<<<<< HEAD
 ### C.4 Database Schema & Normalization
+=======
+### Database Schema & Normalization
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 
 #### **Database Design Principles:**
 
@@ -1371,19 +1534,35 @@ CREATE INDEX idx_audit_logs_user ON audit_logs(user_id);
 
 ## D. URAIAN IMPLEMENTASI SISTEM
 
+<<<<<<< HEAD
 ### D.1 Project Structure
 
 ```
 week17/
+=======
+### Struktur Projek
+
+```
+week15/
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 ├── pom.xml                      # Maven configuration
 ├── src/
 │   ├── main/java/com/upb/agripos/
 │   │   ├── AppJavaFX.java      # Main entry point
 │   │   ├── Launcher.java       # JavaFX launcher
+<<<<<<< HEAD
 │   │   ├── controller/         # MVC Controllers
 │   │   │   ├── AuthController.java
 │   │   │   ├── PosController.java
 │   │   │   └── AdminController.java
+=======
+│   │   ├── ManualStockAdditionTest.java
+│   │   ├── QuickPaymentTest.java
+│   │   ├── StockValidationCheckoutTest.java
+│   │   ├── controller/         # MVC Controllers
+│   │   │   ├── AuthController.java
+│   │   │   ├── PosController.java
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 │   │   ├── service/            # Business Logic
 │   │   │   ├── AuthService.java
 │   │   │   ├── ProductService.java
@@ -1392,6 +1571,7 @@ week17/
 │   │   ├── dao/               # Data Access Layer
 │   │   │   ├── ProductDAO.java
 │   │   │   ├── UserDAO.java
+<<<<<<< HEAD
 │   │   │   ├── TransactionDAO.java
 │   │   │   └── AuditLogDAO.java
 │   │   ├── model/             # Entity Classes
@@ -1433,6 +1613,57 @@ week17/
 ```
 
 ### D.2 Key Implementation Details
+=======
+│   │   │   ├── ProductDAOImpl.java
+│   │   │   ├── TestDatabaseSetup.java
+│   │   │   ├── UserDAOImpl.java
+│   │   │   └── DatabaseIntegrationTest.java
+│   │   ├── model/             # Entity Classes
+|   |   |   ├── audit/
+|   |   |   |	├── AuditAction.java
+|   |   |   |	├── AuditLog.java
+|   |   |   ├── payment/
+|   |   |   |	├── CashPayment.java
+|   |   |   |	├── EWalletPayment.java
+|   |   |   |	├── Payment.java
+|   |   |   |	├── PaymentStatus.java
+|   |   |   ├── transaction/
+|   |   |   |	├── Transaction.java
+|   |   |   |	├── TransactionDetail.java
+|   |   |   |	├── TransactionStatus.java
+│   │   │   ├── Product.java
+│   │   │   ├── User.java
+│   │   │   ├── PurchaseHistory.java
+│   │   ├── view/              # JavaFX Views
+│   │   │   ├── LoginView.java
+│   │   │   ├── PosView.java
+│   │   │   ├── ProductFormView.java
+│   │   │   └── AdminDashboard.java
+│   │   ├── discount/          # Strategy Pattern
+│   │   │   ├── DiscountStrategyPersonB.java (interface)
+│   │   │   ├── PercentageDiscountPersonB.java
+│   │   │   └── FixedDiscountPersonB.java
+│   │   ├── util/              # Utilities
+│   │   │   ├── DatabaseConnection.java (Singleton)
+│   ├── test/java/com/upb/agripos/            # Unit Tests
+│   │   |	├── discount/
+│   │   |	|	├── FixedDiscountPersonBTest.java
+│   │   |	|	├── PercentageDiscountPersonBTest.java
+│   │   |	├── service/
+│   │   |	|	├── AuditLogServiceImplTest.java
+│   │   |	|	├── PaymentServiceImplTest.java
+│   │   |	|	├── ProductServiceImplPersonBTest.java
+│   │   |	|	├── TransactionServiceImplTest.java
+│   │   ├── ProductController.java
+│   │   ├── StockValidationCheckoutTest.java
+├── sql/
+│   ├── schema_agripos.sql     # Database schema
+│   ├── seed_agripos.sql       # Initial data
+└── laporan.md                  # This report
+```
+
+### Key Implementation Details
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 
 #### **GUI Integration (JavaFX)**
 
@@ -1760,7 +1991,11 @@ public class EWalletPayment implements PaymentMethod {
 
 ## E. HASIL PENGUJIAN & DEMONSTRASI SISTEM
 
+<<<<<<< HEAD
 ### E.1 Manual Test Cases (19 Test Cases)
+=======
+### Manual Test Cases (19 Test Cases)
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 
 #### **Functional Requirement Tests:**
 
@@ -1793,7 +2028,11 @@ public class EWalletPayment implements PaymentMethod {
 
 ---
 
+<<<<<<< HEAD
 ### E.2 Unit Testing (JUnit)
+=======
+### Unit Testing (JUnit)
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 
 ```java
 // ProductServiceTest.java
@@ -1955,7 +2194,11 @@ TOTAL:                      14/14 ✅ ALL PASSED
 
 ---
 
+<<<<<<< HEAD
 ### E.3 Demo Evidence & Screenshots
+=======
+### Demo Evidence & Screenshots
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 
 #### **Screenshots:**
 
@@ -2006,7 +2249,11 @@ TOTAL:                      14/14 ✅ ALL PASSED
 
 ## F. ANALISIS KUALITAS & KETERPADUAN SISTEM
 
+<<<<<<< HEAD
 ### F.1 OOP Implementation Analysis
+=======
+### OOP Implementation Analysis
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 
 | Konsep OOP | Implementasi | Evidence |
 |---|---|---|
@@ -2023,7 +2270,11 @@ TOTAL:                      14/14 ✅ ALL PASSED
 
 ---
 
+<<<<<<< HEAD
 ### F.2 SOLID Principles Compliance
+=======
+### SOLID Principles Compliance
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 
 | Principle | Compliance Level | Evidence |
 |---|---|---|
@@ -2037,7 +2288,11 @@ TOTAL:                      14/14 ✅ ALL PASSED
 
 ---
 
+<<<<<<< HEAD
 ### F.3 Database Quality Metrics
+=======
+### Database Quality Metrics
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 
 | Aspek | Status | Penjelasan |
 |---|---|---|
@@ -2049,7 +2304,11 @@ TOTAL:                      14/14 ✅ ALL PASSED
 
 ---
 
+<<<<<<< HEAD
 ### F.4 Code Quality Assessment
+=======
+### Code Quality Assessment
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 
 **Code Organization:**
 - ✅ Clear package structure (model, view, controller, service, dao, util, exception)
@@ -2073,7 +2332,11 @@ TOTAL:                      14/14 ✅ ALL PASSED
 
 ---
 
+<<<<<<< HEAD
 ### F.5 Integration Quality
+=======
+### Integration Quality
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 
 #### **GUI ↔ Controller Integration:**
 ```
@@ -2110,7 +2373,11 @@ Service Call → DAO Method → JDBC → Database → ResultSet → Model Object
 
 ## G. KESIMPULAN
 
+<<<<<<< HEAD
 ### G.1 Pencapaian Proyek
+=======
+### Pencapaian Proyek
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 
 #### **Fitur Wajib - 100% Complete:**
 - ✅ **FR-1: Manajemen Produk** - CRUD dengan kategori, harga, stok
@@ -2125,6 +2392,7 @@ Service Call → DAO Method → JDBC → Database → ResultSet → Model Object
 - ✅ **OFR-6: Audit Log** - Complete activity logging (login, create, update, delete)
 
 #### **Quality Deliverables:**
+<<<<<<< HEAD
 - ✅ **Architecture**: 4-tier layered architecture dengan clear separation
 - ✅ **Design Patterns**: 5 patterns implemented (Singleton, Strategy×2, DAO, MVC)
 - ✅ **SOLID Principles**: All 5 principles complied
@@ -2213,6 +2481,29 @@ Tim telah menunjukkan pemahaman konseptual mendalam tentang:
 ---
 
 ### G.4 Kesiapan untuk Production
+=======
+- ✅ **Architecture**: Menggunakan struktur 4 lapis (4-tier) yang memisahkan fungsi sistem secara jelas.
+- ✅ **Design Patterns**: Menerapkan 5 design pattern (Singleton, Strategy, DAO, MVC) untuk fleksibilitas kode.
+- ✅ **SOLID Principles**: Memenuhi kelima prinsip desain SOLID agar sistem kokoh dan mudah dikembangkan.
+- ✅ **Database**: Menggunakan PostgreSQL dengan skema yang bersih (3NF) dan data yang terintegrasi.
+- ✅ **GUI**: Menggunakan JavaFX dengan pola MVC agar tampilan dan logika program terpisah.
+- ✅ **Testing**: Berhasil melewati 14+ unit test dan 19 tes manual dengan tingkat kelulusan 100%.
+- ✅ **Documentation**: Dilengkapi penjelasan kode yang lengkap dan laporan teknis yang mendalam.
+
+---
+
+**Evaluasi Kualitas Integrasi:**
+- ✅ **JavaFX ↔ Controller**: Hubungan antara tampilan (JavaFX) dan pengontrol sistem berjalan lancar dengan pembaruan data yang otomatis.
+- ✅ **Controller ↔ Service**: Pemisahan fungsi yang jelas antara pengaturan alur kerja dan logika bisnis, lengkap dengan validasi data yang tepat.
+- ✅ **Service ↔ DAO**: Hubungan antar komponen tidak kaku karena menggunakan antarmuka (interface), sehingga kode lebih fleksibel.
+- ✅ **DAO ↔ Database**: Koneksi ke database PostgreSQL aman dan efisien menggunakan implementasi JDBC yang stabil.
+- ✅ **Error Handling**: Sistem mampu menangani berbagai jenis kesalahan di setiap lapisan secara menyeluruh.
+- ✅ **Data Consistency**: Data tetap akurat dan aman berkat pengaturan transaksi yang baik serta aturan database yang ketat.
+
+---
+
+### Kesiapan untuk Production
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 
 **Aspek yang Sudah Production-Ready:**
 - ✅ Clean, maintainable architecture
@@ -2249,7 +2540,11 @@ Tim telah menunjukkan pemahaman konseptual mendalam tentang:
 
 ---
 
+<<<<<<< HEAD
 ### G.5 Pembelajaran & Insights
+=======
+### Pembelajaran & Insights
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 
 Melalui pengembangan Agri-POS, tim telah belajar:
 
@@ -2263,26 +2558,44 @@ Melalui pengembangan Agri-POS, tim telah belajar:
 
 ---
 
+<<<<<<< HEAD
 ### G.6 Kesimpulan Akhir
+=======
+### Kesimpulan Akhir
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 
 **Agri-POS** merepresentasikan implementasi praktis dan profesional dari konsep OOP, design patterns, dan best practices yang dipelajari sepanjang semester.
 
 Sistem ini menunjukkan:
+<<<<<<< HEAD
 - 🎯 **Pemahaman Konseptual Mendalam**: Bukan sekadar implementasi teknis, tapi demonstrasi pemahaman fundamental
 - 🎯 **Architectural Thinking**: Desain sistem dengan clear separation of concerns
 - 🎯 **Code Quality**: Clean, maintainable, testable code
 - 🎯 **Integration Capability**: Seamless integration antara multiple technologies
 - 🎯 **Professional Development**: Ready-for-production quality dengan proper error handling & security
+=======
+- **Pemahaman Konseptual Mendalam**: Bukan sekadar implementasi teknis, tapi demonstrasi pemahaman fundamental
+- **Architectural Thinking**: Desain sistem dengan clear separation of concerns
+- **Code Quality**: Clean, maintainable, testable code
+- **Integration Capability**: Seamless integration antara multiple technologies
+- **Professional Development**: Ready-for-production quality dengan proper error handling & securityc
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 
 Tim **telah menunjukkan kesiapan untuk enterprise application development** dengan professional coding standards, systematic problem-solving, dan architectural awareness yang excellent.
 
 ---
 
+<<<<<<< HEAD
 ## 📚 LAMPIRAN
 
 ### Lampiran A: Bukti Pendukung Proyek
 
 #### **A.1 Slide Presentasi**
+=======
+## LAMPIRAN
+
+#### **Slide Presentasi**
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 Slide presentasi mencakup:
 - Introduction: Business problem & motivation
 - Architecture: Layered design, technology stack
@@ -2292,14 +2605,22 @@ Slide presentasi mencakup:
 - Testing: Unit tests & manual tests
 - Kesimpulan: Lessons learned & future enhancements
 
+<<<<<<< HEAD
 #### **A.2 Bukti Presentasi & Demo**
+=======
+#### **Bukti Presentasi & Demo**
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 (Tangkapan layar atau tautan video demonstrasi:)
 - Login demo
 - Kasir POS flow (add product → checkout → payment)
 - Admin dashboard (product management, audit logs)
 - Error handling (invalid payment, validation errors)
 
+<<<<<<< HEAD
 #### **A.3 Manual Book Penggunaan Aplikasi**
+=======
+#### **Manual Book Penggunaan Aplikasi**
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
 
 **User Manual: Agri-POS Usage Guide**
 
@@ -2329,6 +2650,7 @@ Slide presentasi mencakup:
 - Login failed: Check username/password
 - Database error: Check database permissions
 
+<<<<<<< HEAD
 #### **A.4 GitHub Repository**
 Link: [akan ditambahkan setelah submission]
 
@@ -2348,3 +2670,8 @@ Repository includes:
 ---
 
 *Agri-POS adalah hasil kolaborasi tim yang menunjukkan penguasaan konsep OOP dan best practices dalam software engineering.*
+=======
+#### **GitHub Repository**
+Link: https://github.com/Masterq15/oop-202501-240202882
+---
+>>>>>>> 9d1d3a57051d2c1ea14b79bf2a65573a802a5f62
